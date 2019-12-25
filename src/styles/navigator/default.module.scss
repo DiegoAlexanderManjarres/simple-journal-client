@@ -1,0 +1,8 @@
+@import './base.scss';
+
+
+.navigator {
+    @extend ._navigator;
+    background-color: inherit;
+}
+

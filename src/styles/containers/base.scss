@@ -1,0 +1,99 @@
+@import '../style-variables.scss';
+
+._app_container {    
+    height: auto;
+    min-height: 100%;
+    width: 100%;
+    min-width: 100%;
+    // overflow-y: auto;
+    // border: 2px groove darkkhaki;
+    > footer {           
+        width: 100%;      
+        position: relative;
+        bottom: 0;
+        height: 10rem;
+        min-height: 10rem;
+        // border: 1px solid red;
+    }
+}
+
+.page_container {
+    margin: 0 auto;
+    padding-top: 0.3rem;
+    min-width: 358px;
+    max-width: 50rem;
+    height: 100%;
+    // border: 1px solid pink;    
+}
+
+.space_between__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+._entries_container {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    height: auto;
+    max-height: fit-content;
+    margin: 0;
+    padding: 0.5rem;
+    padding-top: 2rem;
+    // border: 1px solid lemonchiffon;
+    > li {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+        > a {
+            padding: 0;            
+            color: inherit;
+            time {
+                font-size: 0.8rem;
+            }
+            > p {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+._full_vh_modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 3.3rem;
+    color: 'inherit';
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+._modal_content_container {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    min-width: 358px;
+    max-width: 50rem;
+    height: 30rem;    
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    // border: 1px solid $nice-purple;
+}
+
+.view_entry {
+    height: calc(100vh - 5.3rem);
+    // border: 1px solid green;
+    padding: 1rem;
+}
+
+
+

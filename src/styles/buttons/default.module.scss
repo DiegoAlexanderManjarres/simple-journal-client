@@ -1,0 +1,27 @@
+@import './base.scss';
+
+
+.button_extend  {
+    @extend ._button_extend;
+    @include button_shadow_M(darken($nice-magenta, 1%), #d8d8d8);
+    &:hover {
+        @include button_shadow_M(darken($nice-magenta, 4%), #b8b8b8);
+    }
+}
+
+.button {
+    @extend ._button;
+    @include button_shadow_M(darken($nice-magenta, 1%), #d8d8d8);
+    &:hover {
+        @include button_shadow_M(darken($nice-magenta, 4%), #b8b8b8);
+    }
+}
+
+.icon_button {
+    @extend ._icon_button; 
+    @include button_shadow_M(darken($lightest-gray, 2%), darken($lightest-gray, 2%));
+    border: 0.5px solid darken($lightest-gray, 10%);
+    &:hover {
+        @include button_shadow_M(darken($lightest-gray, 3%), darken($lightest-gray, 3%)); 
+    }  
+}

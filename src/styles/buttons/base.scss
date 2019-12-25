@@ -1,0 +1,61 @@
+@import '../style-variables.scss';
+
+
+
+@mixin button_shadow_M($color1, $color2)  {
+    -webkit-box-shadow: inset -1px 3px 4px 3px $color1, 
+                        1px 3px 4px 1px $color2, 
+                        3px 3px 3px 3px rgba(0,0,0,0); 
+    box-shadow: inset -1px 3px 4px 3px $color1, 
+                1px 3px 4px 1px $color2, 
+                3px 3px 3px 3px rgba(0,0,0,0);
+}
+
+.normalize_button {
+    outline: none;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+._button_extend  {
+    @extend .normalize_button;
+    min-height: 2rem;
+    width: 100%;    
+    background-color: $nice-magenta;    
+    color: whitesmoke;    
+}
+
+._button {
+    @extend .normalize_button;
+    height: 2rem;
+    background-color: $nice-magenta;
+    color: $lightest-gray;
+}
+
+._icon_button {
+    @extend .normalize_button;  
+    position: relative;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+    height: 3rem;
+    width: 3rem;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 0.5rem; 
+    cursor: pointer;   
+} 
+
+._button_modal_close {
+    outline: none;
+    border: none;
+    border: 1px solid gray;
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+@import './base.scss';
+
+.viewportCenteredForm {
+    @extend ._viewportCenteredForm;
+    > form {
+        background-color: $lightest-gray;
+        > div {
+            > input {
+                background-color: $lightest-gray; 
+                border-bottom: 1px solid $nice-orange;        
+            }
+        }         
+    }
+}
+
+.entries_form {
+    @extend ._entries_form;
+    > input, > textarea {
+        background-color: $lightest-gray;
+    }
+}

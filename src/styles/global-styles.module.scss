@@ -1,0 +1,60 @@
+@import './style-variables.scss';
+
+
+html {    
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;  
+    letter-spacing: 0.7px;  
+}
+
+
+*, *:before, *:after {
+    box-sizing: inherit
+}
+
+
+html, 
+body, 
+main {    
+    height: 100%;
+    // min-height: 100%;
+    // max-height: 100%;  
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;  
+}
+
+body {      
+    font-family: $main-font;    
+    padding: 0;
+    margin: 0;       
+}
+
+main {
+    min-height: 620px;
+    background-color: inherit;
+}
+
+div[role="group"][tabindex][id="gatsby-focus-wrapper"] {
+    margin-top: 3.3rem;
+    height: auto;
+    min-height: calc(100vh - 3.3rem);
+    max-height: 100%;
+    min-width: 100%;
+    // border: 2px solid green;
+    > div[role="group"][tabindex][style="outline: currentcolor none medium;"] {
+        height: 100%;
+        max-height: max-content;
+        // border: 1px solid blue;
+    }
+}
+
+a {
+    color: $nice-purple;
+    text-decoration: none;
+}
+
+
+
+
