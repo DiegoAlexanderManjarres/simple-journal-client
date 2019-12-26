@@ -22,7 +22,7 @@ import containerThemes from '../../../styles/containers/containerThemes'
 const CheckUserStatus = ({ children }) => {
     const dispatch = useContext(GlobalDispatchContext)
     const [loading, setLoading] = useState(true)
-
+    console.log('running here')
     // Will implement form youtube video a way to cancel the axios request
     // in useEffect
     useEffect(() => {        
