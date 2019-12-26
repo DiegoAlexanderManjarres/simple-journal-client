@@ -1,4 +1,5 @@
 import React from 'react'
+import memoryStorage from 'localstorage-memory'
 
 /* 
     React context used for global state management, 
@@ -69,11 +70,24 @@ const initialState = { isLoggedIn: false }
 /**
  * sets theme name init states to local storage if empty
  */
-const setThemeNameInitState = () => {
-    let _themeName = JSON.parse(window.localStorage.getItem('theme_name'))
+const setThemeNameInitState = () => {  
+    /* let _localStorage 
+
+    if(typeof window === 'undefined') {
+        _localStorage = memoryStorage
+    } else {
+        _localStorage = window.localStorage
+    }
+     */
+     
+    const _localStorage = typeof window === 'undefined' 
+        ? memoryStorage
+        : window.localStorage
+     
+    let _themeName = JSON.parse(_localStorage.getItem('theme_name'))
         if (!_themeName) {  
             _themeName = { name: 'DEFAULT' }       
-            localStorage.setItem('theme_name', JSON.stringify(_themeName))            
+            _localStorage.setItem('theme_name', JSON.stringify(_themeName))            
         }        
     return _themeName    
 }
