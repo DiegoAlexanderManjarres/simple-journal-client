@@ -22,7 +22,6 @@ import containerThemes from '../../../styles/containers/containerThemes'
 const CheckUserStatus = ({ children }) => {
     const dispatch = useContext(GlobalDispatchContext)
     const [loading, setLoading] = useState(true)
-    console.log('running here')
     // Will implement form youtube video a way to cancel the axios request
     // in useEffect
     useEffect(() => {        
@@ -36,8 +35,12 @@ const CheckUserStatus = ({ children }) => {
                 setLoading(false)
             })
             .catch(error => {
+                console.log(error)
                 setLoading(false)
-                throw new Error(error)
+                dispatch({ 
+                    type: 'TOGGLE_LOGGIN_STATUS',
+                    payload: { isLoggedIn: false }
+                })
             })
 
         return () => {
