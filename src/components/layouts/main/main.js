@@ -74,7 +74,7 @@ const MainContent = ({ children }) => {
 
 const MainLayout = ({ children }) => {     
     return (
-        <GoogleReCaptchaProvider reCaptchaKey={process.env.RECATCHA_CLIENT_KEY}>
+        <GoogleReCaptchaProvider reCaptchaKey={process.env.GATSBY_RECATCHA_CLIENT_KEY}>
             <GLOBAL_STATE_CONTEXT_PROVIDER>  
                 <CheckUserStatus>   
                     <MainContent>
