@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect } from "react"
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3'
 import axiosClient from '../../../../utils/axiosConfig'
 import { navigate } from 'gatsby'
 import { REGISTER_MUTATION } from '../../../../graphql/mutations'
-import { ThemeContext } from '../../../../context/contexts'
-import themesForm from '../../../../styles/containers/containerThemes'
+import Form from '../../../layouts/forms/Form_centeredViewPort'
+
 
 
 
@@ -15,8 +15,6 @@ import themesForm from '../../../../styles/containers/containerThemes'
 
 
 const RegisterPage = () => {
-    const { name: _name } = useContext(ThemeContext)
-    const [theme, setTheme] = useState(themesForm[_name])
 
     const [error, setError] = useState(null)
     const [recaptcha, setRecaptcha] = useState(null)
@@ -25,11 +23,7 @@ const RegisterPage = () => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [repeat_password, setRepeat_password] = useState() 
-
-    useEffect(() => {
-        setTheme(themesForm[_name])
-    }, [setTheme, _name])
-
+    
     const onChange = e => {
                  
         const fields = {
@@ -81,11 +75,9 @@ const RegisterPage = () => {
         return null
     }
 
+    const titleHeader = 'Register'
     return (
-        <div className={theme.viewportCenteredForm}>
-            <h1>Register</h1>
-            {error && <h4>{error}</h4>}
-            <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
                 <div>
                     <input 
                         name="name" 
@@ -122,9 +114,8 @@ const RegisterPage = () => {
                     <button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
                         Register
                     </button>
-                </div>        
-            </form>
-        </div>
+                </div>  
+        </Form>
 )}
 
 

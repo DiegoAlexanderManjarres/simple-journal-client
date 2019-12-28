@@ -72,19 +72,18 @@ const MainContent = ({ children }) => {
 
 
 
-const MainLayout = ({ children }) => {     
-    return (
-        <GoogleReCaptchaProvider reCaptchaKey={process.env.GATSBY_RECATCHA_CLIENT_KEY}>
-            <GLOBAL_STATE_CONTEXT_PROVIDER>  
-                <CheckUserStatus>   
-                    <MainContent>
-                        {children}
-                    </MainContent>                    
-                </CheckUserStatus>            
-            </GLOBAL_STATE_CONTEXT_PROVIDER>
-        </GoogleReCaptchaProvider>        
-    )    
-}
+const MainLayout = ({ children }) => (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.GATSBY_RECATCHA_CLIENT_KEY}>
+        <GLOBAL_STATE_CONTEXT_PROVIDER>  
+            <CheckUserStatus>   
+                <MainContent>
+                    {children}
+                </MainContent>                    
+            </CheckUserStatus>            
+        </GLOBAL_STATE_CONTEXT_PROVIDER>
+    </GoogleReCaptchaProvider>        
+)    
+
 
 
 export default MainLayout
