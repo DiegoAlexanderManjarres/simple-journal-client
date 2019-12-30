@@ -9,7 +9,7 @@ import {
     ThemeContext,
     ThemeDispatchContext
 } from '../../../context/contexts'
-import navStyle from '../../../styles/navigator/default.module.scss'
+import navTheme from '../../../styles/navigator/navigatorTheme'
 
 
 
@@ -55,13 +55,14 @@ const ThemeSelector = () => {
 
 
 const NavLinks = ({ state, onClick, location, ...rest }) => {
+    const { name } = useContext(ThemeContext)
 
     const style = ({ pathname }, pathName) => (
         pathname === pathName ? { color: '#c64772', fontWeight: 'bolder'} : null
     )
 
     return (
-        <nav className={navStyle.navigator} { ...rest }> 
+        <nav className={navTheme[name].navigator} { ...rest }> 
             <div>
                 <div>        
                     {state.isLoggedIn 

@@ -43,8 +43,10 @@ const ViewEntry = props => {
     return (
         <div className={theme.page_container}>
 
-            <ButtonExtend onClick={handleModalClic} >Edit Modal</ButtonExtend>
-
+            <div style={{ padding: '0.5rem' }}>
+                <ButtonExtend onClick={handleModalClic} >Edit Modal</ButtonExtend>
+            </div>
+            
             {isEditModal && (
                 <EditEntry onClick={handleModalClic} state={entry} theme={theme}/>
             )}

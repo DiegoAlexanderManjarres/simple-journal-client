@@ -14,7 +14,7 @@
 .normalize_button {
     outline: none;
     border: none;
-    border-radius: 0.3rem;
+    border-radius: 0.2rem;
 }
 
 ._button_extend  {
@@ -30,6 +30,18 @@
     height: 2rem;
     background-color: $nice-magenta;
     color: $lightest-gray;
+    transition: box-shadow 0.3s, color 0.3s;
+    &:disabled {
+        @include button_shadow_M(transparent, transparent);
+        background-color: lighten($nice-magenta, 20%);
+        border: 0.5px solid lightgrey;
+        color: darken($lightest-gray, 5%);
+        &:hover {
+            @include button_shadow_M(lighten($nice-magenta, 15%), transparent);
+            transition: box-shadow 0.3s, color 0.3s;
+            color: darken($lightest-gray, 15%);
+        }
+    }
 }
 
 ._icon_button {

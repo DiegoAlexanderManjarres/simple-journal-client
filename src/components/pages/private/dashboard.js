@@ -97,7 +97,11 @@ const Dashboard = props => {
     return (
         <div className={theme.page_container}>            
             
-            <ButtonExtend type='click' onClick={modalHandleClick}>+</ButtonExtend>
+            <div style={{ padding: '0.5rem' }}>
+                <ButtonExtend type='click' onClick={modalHandleClick}>
+                    +
+                </ButtonExtend>
+            </div>            
 
             <div>
                 {!!message && <h5>{message}</h5>}

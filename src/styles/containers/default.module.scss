@@ -2,7 +2,7 @@
 
 .app_container {
     @extend ._app_container;
-    background-color: white;
+    background-color: #f9f9f9;
     color: lighten($dark-gray, 10%);
 }
 
@@ -10,21 +10,24 @@
 .entries_container {
     @extend ._entries_container;    
     > li {        
-        background-color: darken($lightest-gray, 2%); 
+        background-color: darken(#f9f9f9, 0%); 
         border: 1px solid lighten($nice-orange, 25%);
         box-shadow: 3px 3px 7px 3px $lightest-gray; 
+        // transition: box-shadow 3s, color 3s;
+        &:hover {
+            -webkit-box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 2%), 
+                                2px 5px 16px 0px $lightest-gray, 
+                                5px 5px 15px 5px rgba(0,0,0,0); 
+            box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 2%), 
+                        2px 5px 16px 0px $lightest-gray, 
+                        5px 5px 15px 5px rgba(0,0,0,0);
+            // transition: box-shadow 3s, color 3s;
+        } 
         h4 {
             color: $nice-magenta;
         }                       
     }
-    > li:hover {
-        -webkit-box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 4.5%), 
-                            2px 5px 16px 0px $lightest-gray, 
-                            5px 5px 15px 5px rgba(0,0,0,0); 
-        box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 4.5%), 
-                    2px 5px 16px 0px $lightest-gray, 
-                    5px 5px 15px 5px rgba(0,0,0,0);
-    } 
+    
 }
 
 .modal_content_container {

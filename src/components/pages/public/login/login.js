@@ -11,6 +11,7 @@ import {
 
 import Form from '../../../layouts/forms/Form_centeredViewPort'
 import style from '../../../../styles/containers/containerThemes'
+import { Button } from '../../../layouts/buttons/buttons'
 
 
 
@@ -72,7 +73,7 @@ const LoginPage = () => {
             })
             .catch(error => { throw new Error(error) })                
     }
-    const titleHeader = 'Welcome To Simple Journal'
+    const titleHeader = 'Welcome to Simple Journal'
 
     return (
         <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
@@ -92,9 +93,9 @@ const LoginPage = () => {
             </div>
             {!are_FieldsEmpty && <GoogleReCaptcha onVerify={onVerify} />}
             <div className={style.DEFAULT.space_between__container}>
-                <button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
+                <Button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
                     Login
-                </button>
+                </Button>
                 <Link to='/app/register'>Register</Link>  
             </div>    
         </Form>

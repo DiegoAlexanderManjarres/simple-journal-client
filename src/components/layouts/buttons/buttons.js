@@ -21,7 +21,7 @@ export const ButtonExtend = props => {
 
 
 export const Button = props => {
-    const { type, onClick, onSubmit, children, style } = props
+    const { type, onClick, onSubmit, children, style, disabled } = props
     const { name } = useContext(ThemeContext)
     return (
         <button
@@ -29,6 +29,7 @@ export const Button = props => {
             onClick={onClick}
             onSubmit={onSubmit}
             sytle={style} 
+            disabled={disabled}
             className={buttonsTheme[name].button}
             >{children}
         </button>

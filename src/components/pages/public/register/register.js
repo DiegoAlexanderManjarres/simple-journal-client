@@ -4,6 +4,7 @@ import axiosClient from '../../../../utils/axiosConfig'
 import { navigate } from 'gatsby'
 import { REGISTER_MUTATION } from '../../../../graphql/mutations'
 import Form from '../../../layouts/forms/Form_centeredViewPort'
+import { Button } from '../../../layouts/buttons/buttons'
 
 
 
@@ -111,9 +112,9 @@ const RegisterPage = () => {
             </div>
             <div>
                 {console.log('button disabled?',!(!!recaptcha && !are_FieldsEmpty))}
-                <button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
+                <Button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
                     Register
-                </button>
+                </Button>
             </div>  
         </Form>
 )}
