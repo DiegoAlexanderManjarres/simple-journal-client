@@ -39,7 +39,7 @@ const RegisterPage = () => {
 
     const onVerify = recaptchaToken => {        
         setRecaptcha(recaptchaToken)
-        console.log('recaptcha token:', recaptchaToken)
+        // console.log('recaptcha token:', recaptchaToken)
     }
 
     useEffect(() => {

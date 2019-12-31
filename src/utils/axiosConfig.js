@@ -10,7 +10,7 @@ let axiosCancel = null
  * takes a graphql query object with the query, and variables
  */
 const axiosClient = async (query) => {
-    console.log('backend_url', process.env.GATSBY_BACKEND_URL)
+    // console.log('backend_url', process.env.GATSBY_BACKEND_URL)
     let response
     try {
         response = await axios({

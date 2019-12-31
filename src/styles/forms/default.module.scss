@@ -2,11 +2,14 @@
 
 .viewportCenteredForm {
     @extend ._viewportCenteredForm;
+    > h1 {
+        color: darken($nice-purple, 20%);
+    }
     > form {
-        background-color: $lightest-gray;
+        background-color: $smoke-white;
         > div {
             > input {
-                background-color: $lightest-gray; 
+                background-color: darken($smoke-white, 0%); 
                 border-bottom: 1px solid darken($lightest-gray, 15%);        
             }
         }         

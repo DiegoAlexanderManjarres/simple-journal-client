@@ -27,7 +27,7 @@ const LoginPage = () => {
     
     const onVerify = recaptchaToken => {        
         setRecaptcha(recaptchaToken)
-        console.log('recaptcha token:', recaptchaToken)
+        // console.log('recaptcha token:', recaptchaToken)
     }
 
     const onChange = e => {

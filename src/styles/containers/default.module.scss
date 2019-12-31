@@ -10,7 +10,7 @@
 .entries_container {
     @extend ._entries_container;    
     > li {        
-        background-color: darken(#f9f9f9, 0%); 
+        background-color: darken($smoke-white, 0%); 
         border: 1px solid lighten($nice-orange, 25%);
         box-shadow: 3px 3px 7px 3px $lightest-gray; 
         // transition: box-shadow 3s, color 3s;

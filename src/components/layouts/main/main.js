@@ -22,11 +22,12 @@ import containerThemes from '../../../styles/containers/containerThemes'
 const CheckUserStatus = ({ children }) => {
     const dispatch = useContext(GlobalDispatchContext)
     const [loading, setLoading] = useState(true)
-    // Will implement form youtube video a way to cancel the axios request
+
+    // Will implement from youtube video a way to cancel the axios request
     // in useEffect
     useEffect(() => {        
         axiosClient(ISLOGGED_IN__QUERY)
-            .then(({ data, errors }) => {
+            .then(({ data }) => {
                 dispatch({ 
                     type: 'TOGGLE_LOGGIN_STATUS',
                     payload: { ...data }
@@ -35,7 +36,6 @@ const CheckUserStatus = ({ children }) => {
                 setLoading(false)
             })
             .catch(error => {
-                console.log(error)
                 setLoading(false)
                 dispatch({ 
                     type: 'TOGGLE_LOGGIN_STATUS',

@@ -3,7 +3,7 @@ import buttonsTheme from '../../../styles/buttons/buttonTheme'
 import { ThemeContext } from '../../../context/contexts'
 
 
-
+/* Button Components  */
 export const ButtonExtend = props => {
     const { type, onClick, onSubmit, children, style } = props
     const { name } = useContext(ThemeContext)
