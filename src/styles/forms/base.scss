@@ -80,3 +80,10 @@
       
 }
 
+@media screen and (max-height: 500px) and (orientation: landscape){
+    ._entries_form {
+        > textarea {
+            height: 5rem;
+        }
+    }
+}

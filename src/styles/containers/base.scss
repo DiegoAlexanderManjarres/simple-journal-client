@@ -98,6 +98,15 @@
     // border: 1px solid $nice-purple;
 }
 
+@media screen and (max-height: 500px) and (orientation: landscape){
+    ._modal_content_container {
+        position: fixed;
+        width: 100vw;
+        top: 0;
+    }
+}
+
+
 .view_entry {
     height: calc(100vh - 5.3rem);
     // border: 1px solid green;

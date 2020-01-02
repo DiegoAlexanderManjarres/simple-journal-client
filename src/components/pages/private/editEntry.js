@@ -71,7 +71,7 @@ const EditEntry = props => {
         <div className={theme._full_vh_modal}>
             <ButtonModalClose onClick={props.onClick}>X</ButtonModalClose>
             <div className={theme.modal_content_container}>
-                <h1 style={{ textAlign: 'center' }}>Edit Entry</h1>
+                <h3 style={{ textAlign: 'center' }}>Edit Entry</h3>
                 <Form 
                     onSubmit={handleSubmit} 
                     titleInput={state.title}

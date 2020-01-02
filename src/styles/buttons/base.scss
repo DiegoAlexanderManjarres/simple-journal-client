@@ -60,14 +60,21 @@
 ._button_modal_close {
     outline: none;
     border: none;
-    border: 1px solid gray;
     height: 2rem;
     width: 2rem;
-    background-color: transparent;
+    background-color: rgba(0,0,0,0.1);
     color: white;
     border-radius: 50%;
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     cursor: pointer;
+    z-index: 300;
+}
+
+@media screen and (max-height: 500px) and (orientation: landscape){
+    ._button_modal_close {
+        position: fixed;
+        top: 0.5rem;
+    }
 }

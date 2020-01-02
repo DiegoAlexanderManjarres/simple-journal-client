@@ -40,7 +40,7 @@ const theme = containerThemes[name]
         <div className={theme._full_vh_modal}>
             <ButtonModalClose onClick={modalHandleClick}>X</ButtonModalClose>
             <div className={theme.modal_content_container}>
-                <h1 style={{ textAlign: 'center' }}>Add Entry</h1>
+                <h3 style={{ textAlign: 'center' }}>Add Entry</h3>
                 {anError && <h5>{anError}</h5>}
                 <Form onSubmit={handleSubmit} />
             </div>           
