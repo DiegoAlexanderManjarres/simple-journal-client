@@ -7,7 +7,7 @@ import formThemes from '../../../styles/forms/formsThemes'
 
 
 
-/* Login Component */
+/* Form to be use for login or register pages */
 const Form_centeredViewPort = ({ children, onSubmit, header, anError }) => {
     const { name } = useContext(ThemeContext)    
     const [theme, setTheme] = useState(formThemes[name])

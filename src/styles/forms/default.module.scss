@@ -1,5 +1,7 @@
 @import './base.scss';
 
+
+
 .viewportCenteredForm {
     @extend ._viewportCenteredForm;
     > h1 {
@@ -10,7 +12,7 @@
         > div {
             > input {
                 background-color: darken($smoke-white, 0%); 
-                border-bottom: 1px solid darken($lightest-gray, 15%);        
+                border-bottom: 1px solid gray;        
             }
         }         
     }

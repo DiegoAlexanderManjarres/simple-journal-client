@@ -12,7 +12,7 @@ export const ButtonExtend = props => {
             type={type || 'submit'}
             onClick={onClick}
             onSubmit={onSubmit}
-            sytle={style} 
+            style={style} 
             className={buttonsTheme[name].button_extend}
             >{children}
         </button>
@@ -28,7 +28,7 @@ export const Button = props => {
             type={type || 'submit'}
             onClick={onClick}
             onSubmit={onSubmit}
-            sytle={style} 
+            style={style} 
             disabled={disabled}
             className={buttonsTheme[name].button}
             >{children}

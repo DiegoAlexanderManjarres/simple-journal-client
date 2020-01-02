@@ -47,13 +47,21 @@
     
 } 
 
+._entries_form_container {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+
 ._entries_form {
     display: flex;
     flex-direction: column;
+    align-self: center;
     width: 100%;  
     height: calc(100% - 5rem);
+    justify-content: center;
     // max-height: 25rem;
-    > input, > textarea {     
+    > input, > textarea {    
         outline: none;
         border: none;
         border-radius: 0.5rem;
@@ -61,12 +69,13 @@
     }
     > input {          
         padding: 0rem 0.5rem 0rem; 
+        min-height: 3rem;
         height: 3rem;  
         margin-bottom: 0.6rem; 
     }
     > textarea {              
         padding: 0.5rem 0.5rem 0rem;     
-        height: 100%;
+        height: 10rem;
     }
       
 }
