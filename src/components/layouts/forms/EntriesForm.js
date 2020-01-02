@@ -52,10 +52,7 @@ const EntryForm = props => {
                 defaultValue={contentInput || ''}
                 required={required || false}/>                  
 
-            <div style={{
-                display: 'flex',
-                justifyContent: 'flex-end'
-                }}>
+            <div className={themeForm._entries_form_buttons_container}>
 
                 <Button 
                     type='button' 
