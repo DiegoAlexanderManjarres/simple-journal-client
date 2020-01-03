@@ -20,6 +20,7 @@
 
 .entries_form {
     @extend ._entries_form;
+    background-color: $dark-gray;
     > input, > textarea {
         background-color: darken($dark-gray, 5%);
     }
