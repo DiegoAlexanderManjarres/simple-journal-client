@@ -85,7 +85,7 @@
     justify-content: space-between;
 }
 
-@media screen and (max-height: 450px) and (orientation: landscape) {
+@media screen and (max-height: $landscape) and (orientation: landscape) {
     ._entries_form:focus-within {
         padding: 0.2rem;
         padding-bottom: 0.4rem;        

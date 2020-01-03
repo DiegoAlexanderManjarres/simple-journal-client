@@ -98,7 +98,7 @@
     // border: 1px solid $nice-purple;
 }
 
-@media screen and (max-height: 450px) and (orientation: landscape){
+@media screen and (max-height: $landscape) and (orientation: landscape){
     
 }
 

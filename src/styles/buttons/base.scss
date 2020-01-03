@@ -73,7 +73,7 @@
     z-index: 300;
 }
 
-@media screen and (max-height: 450px) and (orientation: landscape){
+@media screen and (max-height: $landscape) and (orientation: landscape){
     ._button_modal_close {
         top: 0.2rem;
     }
