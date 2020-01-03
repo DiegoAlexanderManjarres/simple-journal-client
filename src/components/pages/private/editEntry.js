@@ -34,6 +34,7 @@ const DeleteEntryButton = props => {
     }
 
     return <IconButton 
+                style={{ marginTop: '0.6rem' }}
                 type='click' 
                 onClick={handleClick} 
                 imagePath='/littering.png'/>
@@ -76,7 +77,9 @@ const EditEntry = props => {
                     onSubmit={handleSubmit} 
                     titleInput={state.title}
                     contentInput={state.text}/>
-                <DeleteEntryButton entryId={state.id} /> 
+                <div className={theme._display_none_onLandscape}>    
+                    <DeleteEntryButton entryId={state.id} /> 
+                </div>
             </div>               
         </div>
     )

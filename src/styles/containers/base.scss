@@ -98,8 +98,14 @@
     // border: 1px solid $nice-purple;
 }
 
+._display_none_onLandscape {   
+    display: flex; 
+}
+
 @media screen and (max-height: $landscape) and (orientation: landscape){
-    
+    ._display_none_onLandscape {        
+        display: none;
+    }
 }
 
 

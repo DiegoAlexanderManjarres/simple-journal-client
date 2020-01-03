@@ -47,9 +47,9 @@
 
 ._icon_button {
     @extend .normalize_button;  
-    position: relative;
+    // position: relative;
     margin: 0 auto;
-    margin-top: 0.6rem;
+    // margin-top: 0.6rem;
     height: 3rem;
     width: 3rem;
     background-color: transparent;
@@ -76,5 +76,9 @@
 @media screen and (max-height: $landscape) and (orientation: landscape){
     ._button_modal_close {
         top: 0.2rem;
+    }
+
+    ._display_button {
+        display: none;
     }
 }

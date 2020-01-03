@@ -48,11 +48,10 @@ export const IconButton = props => {
             type={type || 'submit'}
             onClick={onClick}
             onSubmit={onSubmit}
-            sytle={style} 
             >
                 <img  
                     style={{
-                        position: 'relative',
+                        display: 'block',
                         height: 'auto',
                         width: '100%',
                     }} 
