@@ -105,6 +105,9 @@
 @media screen and (max-height: $landscape) and (orientation: landscape){
     ._modal_content_container:focus-within {
         background-color: transparent;
+        > h3 {
+            display: none;
+        }
         ._display_none_onLandscape {        
             display: none;
         }
