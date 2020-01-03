@@ -103,9 +103,12 @@
 }
 
 @media screen and (max-height: $landscape) and (orientation: landscape){
-    ._display_none_onLandscape {        
-        display: none;
+    ._modal_content_container:focus-within {
+        ._display_none_onLandscape {        
+            display: none;
+        }
     }
+    
 }
 
 
