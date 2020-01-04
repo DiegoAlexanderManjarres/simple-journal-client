@@ -2,9 +2,10 @@ import React, { useEffect, useState, useContext } from "react"
 import axiosClient, { axiosCancel } from "../../../utils/axiosConfig"
 import { GET_MY_ENTRIES__QUERY } from '../../../graphql/queries'
 import EditEntry from './editEntry'
-import { ButtonExtend } from '../../layouts/buttons/buttons'
+import { Button } from '../../layouts/buttons/buttons'
 import { ThemeContext } from '../../../context/contexts'
 import containerThemes from '../../../styles/containers/containerThemes'
+import EditSvg from './../../../../static/edit.svg'
 
 
 
@@ -43,8 +44,14 @@ const ViewEntry = props => {
     return (
         <div className={theme.page_container}>
 
-            <div style={{ padding: '0.5rem' }}>
-                <ButtonExtend onClick={handleModalClic} >Edit Modal</ButtonExtend>
+            <div style={{ 
+                display: 'flex', 
+                padding: '0.5rem 0.5rem 0rem', 
+                justifyContent: 'flex-end' }}
+                >
+                <Button onClick={handleModalClic} >
+                    <EditSvg fill='#fff' width='30' height='30' />
+                </Button>
             </div>
             
             {isEditModal && (

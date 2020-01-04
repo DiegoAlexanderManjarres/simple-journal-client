@@ -98,7 +98,7 @@ const Dashboard = props => {
         <div className={theme.page_container}>            
             
             <div style={{ padding: '0.5rem' }}>
-                <ButtonExtend type='click' onClick={modalHandleClick}>
+                <ButtonExtend type='click' onClick={modalHandleClick} >
                     +
                 </ButtonExtend>
             </div>            

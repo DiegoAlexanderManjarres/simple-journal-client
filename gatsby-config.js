@@ -8,5 +8,14 @@
  
 module.exports = {
   /* Your site config here */
-  plugins: [`gatsby-plugin-sass`, `gatsby-plugin-react-helmet`]
+  plugins: [
+      `gatsby-plugin-sass`, 
+      `gatsby-plugin-react-helmet`,
+      {
+          resolve: 'gatsby-plugin-react-svg',
+          options: {
+              include: /static/
+          }
+      }
+    ]
 }

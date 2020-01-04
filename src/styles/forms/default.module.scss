@@ -20,7 +20,7 @@
 
 .entries_form {
     @extend ._entries_form;
-    background-color: $smoke-white;
+    background-color: white;
     > input, > textarea {
         background-color: $lightest-gray;
     }

@@ -13,12 +13,16 @@ const Footer = () => {
                 {', '}
                 <a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">
                     Eucalyp
-                </a>  
+                </a>
+                {', '}
+                <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">
+                    Kiranshastry
+                </a>   
                     {' from '} 
                 <a href="https://www.flaticon.com/" title="Flaticon">
                     www.flaticon.com
                 </a>                
-            </div>
+            </div>            
         </footer>
     )
 }
