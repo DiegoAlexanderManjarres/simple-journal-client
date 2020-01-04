@@ -7,9 +7,10 @@ import {
     GlobalEntriesDispatch
 } from '../../../context/contexts'
 import { GET_MY_ENTRIES__QUERY } from '../../../graphql/queries'
-import { ButtonExtend } from '../../layouts/buttons/buttons'
+import { Button } from '../../layouts/buttons/buttons'
 import AddEntry from '../private/addEntry'
 import containerThemes from '../../../styles/containers/containerThemes'
+import AddSVG from '../../../../static/add.svg'
 
 
 
@@ -97,10 +98,26 @@ const Dashboard = props => {
     return (
         <div className={theme.page_container}>            
             
-            <div style={{ padding: '0.5rem' }}>
-                <ButtonExtend type='click' onClick={modalHandleClick} >
-                    +
-                </ButtonExtend>
+            <div 
+                style={{ 
+                    display: 'flex', 
+                    padding: '0.5rem 0.5rem 0rem',
+                    justifyContent: 'center',
+                    height: '3rem',
+                    }
+                }>
+                <Button 
+                    type='button' 
+                    onClick={modalHandleClick} 
+                    style={{ 
+                        padding: '0', 
+                        width: '2.5rem', 
+                        height: '2.5rem', 
+                        paddingTop: '0.1rem', 
+                        }
+                    }>
+                    <AddSVG fill='#fff' width='80%' height='auto' />
+                </Button>
             </div>            
 
             <div>

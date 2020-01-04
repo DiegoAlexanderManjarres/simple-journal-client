@@ -49,7 +49,7 @@ const ViewEntry = props => {
                 justifyContent: 'flex-end' }}
                 >
                 <Button onClick={handleModalClic} >
-                    <EditSvg fill='#fff' width='30' height='30' />
+                    <EditSvg fill='#fff' width='25' height='25' />
                 </Button>
             </div>
             
