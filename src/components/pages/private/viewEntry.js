@@ -9,7 +9,6 @@ import EditSvg from './../../../../static/edit.svg'
 
 
 
-
 const ViewEntry = props => {
 
     const { entryId, location: { state } } = props
