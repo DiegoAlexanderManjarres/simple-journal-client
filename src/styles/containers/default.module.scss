@@ -11,9 +11,9 @@
     @extend ._entries_container;    
     > li {        
         background-color: darken($smoke-white, 0%); 
-        border: 1px solid lighten($nice-orange, 25%);
+        border: 1px dashed lighten($nice-magenta, 25%);
         box-shadow: 3px 3px 7px 3px $lightest-gray; 
-        // transition: box-shadow 3s, color 3s;
+        transition: box-shadow 3s, color 3s;
         &:hover {
             -webkit-box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 2%), 
                                 2px 5px 16px 0px $lightest-gray, 
@@ -28,6 +28,16 @@
         }                       
     }
     
+}
+
+@media screen and (min-width: 640px) {
+    .entries_container {
+        > li {
+            border: none;
+            border-bottom: 1.3px dashed lighten($nice-magenta, 25%);
+            box-shadow: none;
+        }
+    }
 }
 
 .modal_content_container {
