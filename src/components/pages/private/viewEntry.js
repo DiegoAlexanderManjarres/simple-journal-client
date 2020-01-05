@@ -21,12 +21,12 @@ const ViewEntry = props => {
     
     useEffect(() => {
         if (!isState) {
-            axiosClient({ ...GET_MY_ENTRIES__QUERY, variables: { entryId }})
+            axiosClient({ ...GET_MY_ENTRIES__QUERY, variables: { entryId } })
                 .then(({ data }) => {      
                     const isDataArray = data && Array.isArray(data.entries)          
                     setEntry( isDataArray ? data.entries[0] : null)                
                 })
-                .catch(error => console.log(error))
+                .catch(error => { throw new Error(error) })
 
             return () => {
                 axiosCancel()
@@ -46,7 +46,7 @@ const ViewEntry = props => {
             <div style={{ 
                 display: 'flex', 
                 padding: '0.5rem 0.5rem 0rem', 
-                justifyContent: 'flex-end' }}
+                justifyContent: 'center' }}
                 >
                 <Button onClick={handleModalClic} >
                     <EditSvg fill='#fff' width='25' height='25' />

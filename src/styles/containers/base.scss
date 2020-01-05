@@ -118,7 +118,9 @@
 
 .view_entry {
     height: calc(100vh - 5.3rem);
-    // border: 1px solid green;
+    > h1 {
+        margin: 3.5rem 0rem 3rem 0rem;
+    }       
     padding: 0.5rem;
 }
 

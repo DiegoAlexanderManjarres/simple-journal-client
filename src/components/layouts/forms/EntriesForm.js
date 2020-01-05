@@ -43,6 +43,7 @@ const EntryForm = props => {
                 name='title' 
                 placeholder='Title' 
                 defaultValue={titleInput || ''}
+                autoComplete='off'
                 required={required || false}/>
                             
             <textarea 
