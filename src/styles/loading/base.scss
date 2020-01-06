@@ -4,6 +4,8 @@
 // http://www.alessioatzeni.com/blog/css3-loading-animation/
 
 #content {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 4rem;
     margin: 10rem auto;
@@ -18,11 +20,20 @@
     position: absolute;
     box-shadow: 0px 0px 10px 1px rgba(240,99,85,0.7);
     animation: fullexpand 10s ease-out;
+    animation-iteration-count: 3;
 }
 
 @keyframes fullexpand {
     0% { 
         width: 0px;
+    }
+    35% {
+        background-color: $nice-magenta;
+        box-shadow: 0px 0px 10px 1px rgba(199,79,114,0.7);
+    }
+    70% {
+        background-color: $nice-purple;
+        box-shadow: 0px 0px 10px 1px rgba(173,98,192,0.7);
     }
     100% {
         width: 100%;
@@ -31,13 +42,19 @@
 
 .change {
     color: $dark-gray;
-    animation: colorchange 2s ease-out;
+    animation: colorchange 3s ease-out;
     animation-iteration-count: infinite;
 }
 
 @keyframes colorchange {
     0% { 
         color: $dark-gray;
+    }
+    30% {
+        color: $nice-purple;
+    }
+    70% {
+        color: $nice-magenta;
     }
     100% {
         color: $nice-orange;
@@ -69,6 +86,17 @@
     animation-iteration-count: infinite;
 }
 
+.circle:after {
+    position: absolute;
+    content: ' ';
+    border-top: 3px solid $nice-purple;    
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    animation: rotation 3s ease-out;
+    animation-iteration-count: infinite;
+}
+
 @keyframes rotation {
     from { 
         transform: rotate(0deg);
@@ -77,3 +105,4 @@
         transform: rotate(360deg);
     }
 }
+
