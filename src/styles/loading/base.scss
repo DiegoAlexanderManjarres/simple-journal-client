@@ -1,0 +1,79 @@
+@import '../style-variables.scss';
+
+// loading component css from
+// http://www.alessioatzeni.com/blog/css3-loading-animation/
+
+#content {
+    width: 100%;
+    height: 4rem;
+    margin: 10rem auto;
+    // background-color: $darkest-gray;
+}
+
+.expand {
+    width: 100%;
+    height: 0.3rem;
+    margin: 0.2rem 0;
+    background-color: $nice-orange;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px rgba(240,99,85,0.7);
+    animation: fullexpand 10s ease-out;
+}
+
+@keyframes fullexpand {
+    0% { 
+        width: 0px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.change {
+    color: $dark-gray;
+    animation: colorchange 2s ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorchange {
+    0% { 
+        color: $dark-gray;
+    }
+    100% {
+        color: $nice-orange;
+    }
+}
+
+.circle {
+    position: relative;
+    top: 7rem;
+    margin: 0 auto;
+    height: 10rem;
+    width: 10rem;
+    // border: 1px solid $nice-orange;
+    border-left: 3px solid $nice-orange;
+    border-radius: 50%;
+    animation: rotation 2s ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.circle:before {
+    position: absolute;
+    content: ' ';
+    border-right: 3px solid $nice-magenta;    
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem;
+    animation: rotation 1s ease-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+    from { 
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
