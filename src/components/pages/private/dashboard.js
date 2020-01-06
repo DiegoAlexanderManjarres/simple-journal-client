@@ -16,6 +16,8 @@ import AddSVG from '../../../../static/add.svg'
 
 
 const EntryCart = ({ entry }) => {    
+    const _language = navigator.language
+    const timeFormat = { hour: '2-digit', minute:'2-digit' }
     return (
         <li data_id={entry.id}>
             <Link to={`/app/viewEntry/${entry.id}`} state={entry} >
@@ -26,7 +28,11 @@ const EntryCart = ({ entry }) => {
                     justifyContent: 'space-between'
                 }}>
                     <time>{new Date(entry.createdAt).toDateString()}</time>                    
-                    <time>{new Date(entry.createdAt).toLocaleTimeString('us')}</time>
+                    <time>
+                        {new Date(entry.createdAt)
+                            .toLocaleTimeString(_language, timeFormat)
+                        }
+                    </time>
                 </div>
             </Link>
         </li>

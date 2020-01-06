@@ -10,6 +10,8 @@ import EditSvg from './../../../../static/edit.svg'
 
 
 const ViewEntry = props => {
+    const timeFormat = { hour: '2-digit', minute: '2-digit' }
+    const _language = navigator.language
 
     const { entryId, location: { state } } = props
     const isState = !!state
@@ -38,16 +40,17 @@ const ViewEntry = props => {
         setIsEditModal(!isEditModal)
     }
 
-    if (!entry) { return <h5>Could not fetch entry</h5> }
+    if (!entry) { return <h5>Could not fetch entry</h5> }    
 
     return (
         <div className={theme.page_container}>
 
-            <div style={{ 
-                display: 'flex', 
-                padding: '0.5rem 0.5rem 0rem', 
-                justifyContent: 'center' }}
-                >
+            <div 
+                style={{ 
+                    display: 'flex', 
+                    padding: '0.5rem 0.5rem 0rem', 
+                    justifyContent: 'center' 
+                }}>
                 <Button onClick={handleModalClic} >
                     <EditSvg fill='#fff' width='25' height='25' />
                 </Button>
@@ -64,7 +67,11 @@ const ViewEntry = props => {
                         <time>{new Date(entry.createdAt).toDateString()}</time>
                     </p>
                     <p>    
-                        <time>{new Date(entry.createdAt).toLocaleTimeString('en-US')}</time>
+                        <time>
+                            {new Date(entry.createdAt)
+                                .toLocaleTimeString(_language, timeFormat)
+                            }
+                        </time>
                     </p>
                 </div>
                 

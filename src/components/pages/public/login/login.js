@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react"
 import { Link } from '@reach/router'
+import Loading from '../../common/loading'
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { navigate } from 'gatsby'
 import axiosClient from '../../../../utils/axiosConfig'
@@ -24,6 +25,7 @@ const LoginPage = () => {
     const [password, setPassword] = useState()
     const [are_FieldsEmpty, setAre_FieldsEmpty] = useState(true)
     const [error, setError] = useState(null) 
+    const [loading, setLoading] = useState(false)
     
     const onVerify = recaptchaToken => {        
         setRecaptcha(recaptchaToken)
@@ -48,9 +50,9 @@ const LoginPage = () => {
         }
     }, [email, password, are_FieldsEmpty])
 
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault()
-
+        setLoading(true)
         const email = e.target.email.value
         const password = e.target.password.value
 
@@ -59,6 +61,7 @@ const LoginPage = () => {
                 
                 if (!data) { 
                     setError('Unable to athenticate')
+                    setLoading(false)
                     return null 
                 }
 
@@ -71,9 +74,14 @@ const LoginPage = () => {
 
                 return null                         
             })
-            .catch(error => { throw new Error(error) })                
+            .catch(error => { 
+                setLoading(false)
+                throw new Error(error) 
+            })                
     }
     const titleHeader = 'Welcome to Simple Journal'
+
+    if (loading) { return <Loading /> }
 
     return (
         <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
