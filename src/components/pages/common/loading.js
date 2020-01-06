@@ -1,10 +1,20 @@
 import React from "react"
+import '../../../styles/loading/base.scss'
 
 
 const LoadingPage = () => (
-  <main>
-    <h1>Loading...</h1>    
-  </main>
+  <section>
+      
+    <header>
+    <div className='circle'></div>
+        <h1 className='change' style={{ textAlign: 'center' }}>LOADING</h1>
+    </header> 
+    <div id='content'>
+        <span className='expand'></span>
+    </div>
+      
+      
+  </section>
 )
 
 

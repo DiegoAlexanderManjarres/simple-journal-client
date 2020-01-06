@@ -11,6 +11,7 @@ import { Button } from '../../layouts/buttons/buttons'
 import AddEntry from '../private/addEntry'
 import containerThemes from '../../../styles/containers/containerThemes'
 import AddSVG from '../../../../static/add.svg'
+import Loading from '../common/loading'
 
 
 
@@ -72,6 +73,7 @@ const Dashboard = props => {
 
     const [theme] = useState(containerThemes[name])
     const [isAddEntryModal, setIsAddEntryModal] = useState(false)
+    const [loading, setLoading] = useState(false)
     
     /* 
         TODO
@@ -83,15 +85,20 @@ const Dashboard = props => {
     // effect that fetches entries from db
     useEffect(() => {
         if (entries.length < 1) {
+            setLoading(true)
             axiosClient(GET_MY_ENTRIES__QUERY)
                 .then(({ data }) => {      
                     const isDataArray = data && Array.isArray(data.entries)  
                     dispatchEntries({ 
                         type: 'SET_ENTRIES',
                         payload: isDataArray ? data.entries : []
-                    })                
+                    })  
+                    setLoading(false)              
                 })
-                .catch(error => console.log(error))
+                .catch(error => {
+                    setLoading(false)
+                    console.log(error)
+                })
 
             return () => {
                 axiosCancel()
@@ -100,7 +107,7 @@ const Dashboard = props => {
     }, [dispatchEntries, entries.length])
 
     const modalHandleClick = () => { setIsAddEntryModal(!isAddEntryModal) }
-
+    
     return (
         <div className={theme.page_container}>            
             
@@ -137,7 +144,7 @@ const Dashboard = props => {
                     theme={theme} />
             )}
 
-            <Entries entries={entries} />       
+            {loading ? <Loading /> : <Entries entries={entries} /> }      
 
         </div>
     )

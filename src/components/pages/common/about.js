@@ -1,10 +1,12 @@
 import React from "react"
+import Loading from '../common/loading'
 
 
 const AboutPage = (props) => (
   <main>
-    <h1>About the Author</h1>
-    <p>Welcome to my Gatsby site.</p>
+    <Loading />  
+    {/* <h1>About the Author</h1>
+    <p>Welcome to my Gatsby site.</p> */}
   </main>
 )
 
