@@ -1,21 +1,38 @@
-import React from "react"
-import '../../../styles/loading/base.scss'
+import React, { useContext } from "react"
+import { ThemeContext } from '../../../context/contexts'
+import loadingThemes from '../../../styles/loading/loadingTheme'
 
 
-const LoadingPage = props => (
-  <section>
-      
-    <header>
-        <div className='circle'></div>
-        <h1 className='change' style={{ textAlign: 'center' }}>LOADING</h1>
-    </header> 
+
+const LoadingPage = props => {
+    const { name } = useContext(ThemeContext)
+    const theme = loadingThemes[name]
+    return (
+        <section>
+            
+            <header>
+                <div className={theme.circle}></div>
+                <h1 className={theme.change}>LOADING</h1>
+            </header> 
+            
+            <div id={theme.content}>
+                <span className={theme.expand}></span>
+            </div>      
+            
+        </section>
+    )
+}
+
+export const LoadingFull = props => {
+    const { name } = useContext(ThemeContext)
     
-    <div id='content' >
-        <span className='expand'></span>
-    </div>      
-      
-  </section>
-)
+    return (
+        <div className={loadingThemes[name].loading_full}>
+            <LoadingPage />
+        </div>
+    )
+}
+
 
 
 export default LoadingPage

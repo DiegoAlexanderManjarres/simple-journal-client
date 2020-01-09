@@ -41,11 +41,11 @@ div[role="group"][tabindex][id="gatsby-focus-wrapper"] {
     height: auto;
     min-height: calc(100vh - 3.3rem);
     max-height: 100%;
-    min-width: 100%;
+    min-width: 100%;    
     // border: 2px solid green;
     > div[role="group"][tabindex][style="outline: currentcolor none medium;"] {
         height: 100%;
-        max-height: max-content;
+        max-height: max-content;        
         // border: 1px solid blue;
     }
 }

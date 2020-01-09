@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { navigate } from 'gatsby'
 import { Link, Location } from '@reach/router'
 import axiosClient from '../../../utils/axiosConfig'
@@ -10,6 +10,7 @@ import {
     ThemeDispatchContext
 } from '../../../context/contexts'
 import navTheme from '../../../styles/navigator/navigatorTheme'
+import { LoadingFull } from '../../pages/common/loading'
 
 
 
@@ -31,7 +32,7 @@ const ThemeSelector = () => {
 
     return (
         <div style={{
-            border: `1px solid ${ name === 'DARK' ? '#585858' : '#eaeaea'}`,
+            border: `1px solid ${name === 'DARK' ? '#585858' : '#eaeaea'}`,
             padding: '2px',
             borderRadius: '50%',
             maxHeight: '2.4rem',
@@ -41,7 +42,7 @@ const ThemeSelector = () => {
                 type='image' 
                 onClick={handleClick} 
                 alt='change theme'
-                src='/day.png' 
+                src='/assets/icons/day.png' 
                 data_value='DEFAULT'
                 style={{
                     maxHeight: '2rem',
@@ -100,23 +101,30 @@ const NavLinks = ({ state, onClick, location, ...rest }) => {
 
 
 // Using Location component from @react-router to get current location
-const Navigator = (props) => {
-
+const Navigator = props => {    
     const state = useContext(GlobalStateContext)
     const dispatch = useContext(GlobalDispatchContext)
+    const [loading, setLoading] = useState(false)
 
-    const handleClick = (e) => {
+    const handleClick = e => {
+        setLoading(true)
         axiosClient(LOGOUT_QUERY)
             .then(response => {
                 dispatch({ 
                     type: 'TOGGLE_LOGGIN_STATUS',
                     payload: { ...state, isLoggedIn: false }
                 })
+                setLoading(false)
                 navigate('/')
                 return null
             })
-            .catch(error => { throw new Error(error) })
+            .catch(error => { 
+                setLoading(false)
+                throw new Error(error) 
+            })
     }
+
+    if (loading) { return <LoadingFull /> }
 
     return (
         <Location>
@@ -127,6 +135,7 @@ const Navigator = (props) => {
         
     )
 }
+
 
 
 export default Navigator

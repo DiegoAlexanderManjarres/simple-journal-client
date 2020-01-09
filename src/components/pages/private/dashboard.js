@@ -10,7 +10,7 @@ import { GET_MY_ENTRIES__QUERY } from '../../../graphql/queries'
 import { Button } from '../../layouts/buttons/buttons'
 import AddEntry from '../private/addEntry'
 import containerThemes from '../../../styles/containers/containerThemes'
-import AddSVG from '../../../../static/add.svg'
+import AddSVG from '../../../../static/assets/icons/add.svg'
 import Loading from '../common/loading'
 
 

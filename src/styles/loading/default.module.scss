@@ -1,0 +1,8 @@
+@import './base.scss';
+
+
+.loading_full {
+    @extend .loading_full;
+    background-color: white;
+}
+

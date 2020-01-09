@@ -5,7 +5,7 @@ import EditEntry from './editEntry'
 import { Button } from '../../layouts/buttons/buttons'
 import { ThemeContext } from '../../../context/contexts'
 import containerThemes from '../../../styles/containers/containerThemes'
-import EditSvg from './../../../../static/edit.svg'
+import EditSvg from './../../../../static/assets/icons/edit.svg'
 
 
 
