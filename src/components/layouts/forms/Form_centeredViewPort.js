@@ -16,7 +16,6 @@ const Form_centeredViewPort = ({ children, onSubmit, header, anError }) => {
         setTheme(formThemes[name])
     }, [setTheme, name])
     
-
     return (
         <div className={theme.viewportCenteredForm}>  
             <h1>{header}</h1>            

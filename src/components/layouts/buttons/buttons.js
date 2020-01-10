@@ -3,25 +3,10 @@ import buttonsTheme from '../../../styles/buttons/buttonTheme'
 import { ThemeContext } from '../../../context/contexts'
 
 
-/* Button Components  */
-export const ButtonExtend = props => {
-    const { type, onClick, onSubmit, children, style } = props
-    const { name } = useContext(ThemeContext)
-    return (
-        <button
-            type={type || 'submit'}
-            onClick={onClick}
-            onSubmit={onSubmit}
-            style={style} 
-            className={buttonsTheme[name].button_extend}
-            >{children}
-        </button>
-    )
-}
 
-
+// base default button
 export const Button = props => {
-    const { type, onClick, onSubmit, children, style, disabled } = props
+    const { type, onClick, onSubmit, children, style, disabled, _className } = props
     const { name } = useContext(ThemeContext)
     return (
         <button
@@ -30,49 +15,36 @@ export const Button = props => {
             onSubmit={onSubmit}
             style={style} 
             disabled={disabled}
-            className={buttonsTheme[name].button}
+            className={buttonsTheme[name][_className || 'button']}
             >{children}
         </button>
     )
 }
 
 
-export const IconButton = props => {
-    const { type, onClick, onSubmit, imagePath, style } = props
-    const { name } = useContext(ThemeContext)
-     
-    return (
-        <button
-            className={buttonsTheme[name].icon_button}
-            style={style}
-            type={type || 'submit'}
-            onClick={onClick}
-            onSubmit={onSubmit}
-            >
-                <img  
-                    style={{
-                        display: 'block',
-                        height: 'auto',
-                        width: '100%',
-                    }} 
-                    src={imagePath} 
-                    alt='trash icon'/>
-        </button>
-    )
-}
+// button extends to parent width
+export const ButtonExtend = ({ _className, ...rest }) => (
+    <Button _className={'button_extend'} {...rest}/>
+)
+
+/**
+ * IconButton defaults to app trash icon butt it can be overrided with
+ * props imgpath, imgeStyle alt 
+ */
+export const IconButton = ({ _className, imagePath, ...rest }) => (
+    <Button _className={'icon_button'} {...rest}>
+        <img  
+            style={rest.imageStyle || {
+                display: 'block',
+                height: 'auto',
+                width: '100%',
+            }} 
+            src={imagePath} 
+            alt={rest.alt || 'trash icon'}/>
+    </Button>
+)
 
 
-export const ButtonModalClose = props => {
-    const { type, onClick, onSubmit, children, style } = props
-    const { name } = useContext(ThemeContext)
-    return (
-        <button
-            type={type || 'submit'}
-            onClick={onClick}
-            onSubmit={onSubmit}
-            sytle={style} 
-            className={buttonsTheme[name]._button_modal_close}
-            >{children}
-        </button>
-    )
-}
+export const ButtonModalClose = ({ _className, ...rest}) => (
+    <Button _className={'_button_modal_close'} {...rest} />
+)

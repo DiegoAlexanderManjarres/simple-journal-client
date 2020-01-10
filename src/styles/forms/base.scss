@@ -31,6 +31,19 @@
     }
 }
 
+@media screen and (max-height: $landscape) and (orientation: landscape) {
+    ._viewportCenteredForm {
+        input:focus {
+            position: fixed;
+            top: calc(0rem - 3.3rem);
+            left: 0;
+            right: 0;
+            height: 100vh;
+            z-index: 600;
+        }
+    }
+}
+
 // when screen is is 500px or less
 @media screen and (max-height: 500px) {
     ._viewportCenteredForm {

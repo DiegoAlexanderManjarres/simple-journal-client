@@ -14,7 +14,7 @@ module.exports = {
       {
           resolve: 'gatsby-plugin-react-svg',
           options: {
-              include: /static/
+              include: /assets/
           }
       }
     ]

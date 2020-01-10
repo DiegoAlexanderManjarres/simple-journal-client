@@ -37,7 +37,7 @@ const DeleteEntryButton = props => {
                 style={{ marginTop: '0.6rem' }}
                 type='click' 
                 onClick={handleClick} 
-                imagePath='/littering.png'/>
+                imagePath='/assets/icons/littering.png'/>
 }
 
 

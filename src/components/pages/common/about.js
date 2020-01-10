@@ -1,19 +1,21 @@
 import React, { useState } from "react"
 import Loading from '../common/loading'
-import { Button } from '../../layouts/buttons/buttons'
+import { ButtonExtend } from '../../layouts/buttons/buttons'
 
 
 
-const containerStyle = { width: '50rem', margin: '0 auto' }
+const containerStyle = { maxWidth: '50rem', margin: '0 auto' }
 
 
 
 const AboutContent = props => (
     <section style={containerStyle}>
         <header>
-            <h2 style={{ textAlign: 'center' }}>About simple-journal</h2>
+            <h2 style={{ textAlign: 'center', margin: '4rem 0rem 3rem 0rem' }}>
+                About simple-journal
+            </h2>
         </header>
-        <div>
+        <div style={{ margin: '0.5rem' }}>
             <p>
                 Simple journal is a demo app for education purposes, that is built using Gatsby
                 for the front-end, and it uses Graphql-yoga with Prisma for the backend.
@@ -33,10 +35,10 @@ const AboutPage = props => {
 
     return (
         <main>
-            <header style={containerStyle}>
-                <Button type='button' onClick={onHandleClick}>
+            <header style={{...containerStyle, padding: ' 0rem 0.5rem 0rem' }}>
+                <ButtonExtend type='button' onClick={onHandleClick}>
                     {buttonName[+showLoading]}
-                </Button>
+                </ButtonExtend>
             </header>            
             {showLoading ? <Loading /> : <AboutContent />}            
         </main>

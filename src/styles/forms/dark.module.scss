@@ -1,13 +1,19 @@
 @import './base.scss';
 
+
+
 .viewportCenteredForm {
     @extend ._viewportCenteredForm;
     > form {
-        background-color: $dark-gray;
+        background-color: $darkest-gray;
+        border: 1px dotted $dark-gray;
+        border-left: 1px dotted $nice-purple;
+        border-right: 1px dotted $nice-purple;
+
         > div {
             > input {
-                background-color: $dark-gray; 
-                border-bottom: 1px solid darken($lightest-gray, 50%);
+                background-color: $darkest-gray; 
+                border-bottom: 1px dotted darken($nice-purple, 0%);
                 color: $lightest-gray;
             }
             ::placeholder {
