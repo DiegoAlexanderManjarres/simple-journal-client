@@ -54,7 +54,6 @@ const EntriesReducer = (state, action) => {
                 stateToUpdate[index] = {...action.payload}
             return [...stateToUpdate]
         case 'DELETE_ENTRY':
-            console.log('delete', state)
             return [...state].filter(entry => entry.id !== action.payload)    
         default:
             return state    
@@ -77,6 +76,7 @@ const setThemeNameInitState = () => {
         : window.localStorage
      
     let _themeName = JSON.parse(_localStorage.getItem('theme_name'))
+    console.log('constext localstorate themeName:', _themeName)
         if (!_themeName) {  
             _themeName = { name: 'DEFAULT' }       
             _localStorage.setItem('theme_name', JSON.stringify(_themeName))            
