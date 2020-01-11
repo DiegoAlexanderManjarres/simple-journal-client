@@ -76,7 +76,6 @@ const setThemeNameInitState = () => {
         : window.localStorage
      
     let _themeName = JSON.parse(_localStorage.getItem('theme_name'))
-    console.log('constext localstorate themeName:', _themeName)
         if (!_themeName) {  
             _themeName = { name: 'DEFAULT' }       
             _localStorage.setItem('theme_name', JSON.stringify(_themeName))            

@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { ThemeContext } from '../../../context/contexts'
 import loadingThemes from '../../../styles/loading/loadingTheme'
 
@@ -6,8 +6,13 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 const LoadingPage = ({ _className, ...rest }) => {
     const { name } = useContext(ThemeContext)
-    const theme = loadingThemes[name]
-    const _classname = _className ? theme[_className] : null
+    const [theme, setTheme] = useState(loadingThemes[name])
+    const [class_name, setClass_name] = useState(null)
+
+    useEffect(() => {
+        setTheme(loadingThemes[name])
+        if (_className) { setClass_name(loadingThemes[name][_className]) }
+    }, [_className, name])
     
     // console.log(name, ': ', _classname)
 
@@ -17,12 +22,12 @@ const LoadingPage = ({ _className, ...rest }) => {
 
         Using style did not fixed it    
 
-        It seems that  when is compliled, its not reading localstorage and its only using
-        its default value from context
+        localstorage its being read at context correctly, 
+        but the html return it has the 'DEFAULT' theme
     */
 
     return (
-        <section className={_classname}>            
+        <section className={class_name}>            
             <header>
                 <div className={theme.circle}></div>
                 <h1 className={theme.change}>LOADING</h1>
