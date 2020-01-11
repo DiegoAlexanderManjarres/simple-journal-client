@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import memoryStorage from 'localstorage-memory'
 import { navigate } from 'gatsby'
 import { Link, Location } from '@reach/router'
 import axiosClient from '../../../utils/axiosConfig'
@@ -28,7 +29,10 @@ const ThemeSelector = () => {
                 : 'DEFAULT'
 
         dispatch({ type: 'SET_THEME_NAME', payload: { name: themeName }})
-        localStorage.setItem('theme_name', JSON.stringify({ name: themeName }))        
+        const _localStorage = typeof window === 'undefined' 
+            ? memoryStorage
+            : window.localStorage
+        _localStorage.setItem('theme_name', JSON.stringify({ name: themeName }))        
     }
 
     return (
