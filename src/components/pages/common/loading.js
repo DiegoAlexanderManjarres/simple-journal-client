@@ -5,14 +5,14 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 
 const LoadingPage = ({ _className, ...rest }) => {
-    const state = useContext(ThemeContext)
-    // let [theme, setTheme] = useState(loadingThemes[state.name])
+    const { name } = useContext(ThemeContext)
+    const [theme, setTheme] = useState()
     const [class_name, setClass_name] = useState(null)
 
     useEffect(() => {
-        // setTheme(loadingThemes[state.name] ) 
-        if (_className) { setClass_name(loadingThemes[state.name][_className]) }
-    }, [_className, state.name])
+        setTheme(loadingThemes[name] ) 
+        if (_className) { setClass_name(loadingThemes[name][_className]) }
+    }, [_className, name])
     
     // console.log(name, ': ', _classname)
 
@@ -29,12 +29,12 @@ const LoadingPage = ({ _className, ...rest }) => {
     return (
         <section className={class_name}>            
             <header>
-                <div className={loadingThemes[state.name].circle}></div>
-                <h2 className={loadingThemes[state.name].change}>LOADING</h2>
+                <div className={(theme || loadingThemes[name]).circle}></div>
+                <h2 className={(theme || loadingThemes[name]).change}>LOADING</h2>
             </header> 
             
-            <div id={loadingThemes[state.name].content}>
-                <span className={loadingThemes[state.name].expand} />
+            <div id={(theme || loadingThemes[name]).content}>
+                <span className={(theme || loadingThemes[name]).expand} />
             </div>      
             
         </section>
