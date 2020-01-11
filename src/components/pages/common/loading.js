@@ -17,20 +17,20 @@ const LoadingPage = ({ _className, ...rest }) => {
     // console.log(name, ': ', _classname)
 
     /* TODO
-        on production netlify for some reason the theme that shows on client side
-        is allways DEFAULT even when console log shows its DARK
-
         Using style did not fixed it    
 
         localstorage its being read at context correctly, 
-        but the html return it has the 'DEFAULT' theme
+        but the html elements inside section element return classes with default theme
+
+        is allways DEFAULT even when console log shows its DARK
+
     */
 
     return (
         <section className={class_name}>            
             <header>
                 <div className={theme.circle}></div>
-                <h2 className={theme.change}>LOADING...</h2>
+                <h2 className={theme.change}>LOADING</h2>
             </header> 
             
             <div id={theme.content}>
