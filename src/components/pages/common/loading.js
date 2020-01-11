@@ -5,14 +5,14 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 
 const LoadingPage = ({ _className, ...rest }) => {
-    const { name } = useContext(ThemeContext)
-    const [theme, setTheme] = useState(loadingThemes[name])
+    const state = useContext(ThemeContext)
+    let [theme, setTheme] = useState(loadingThemes[state.name])
     const [class_name, setClass_name] = useState(null)
 
     useEffect(() => {
-        setTheme(prev => ({...prev, ...loadingThemes[name] }))
-        if (_className) { setClass_name(loadingThemes[name][_className]) }
-    }, [_className, name])
+        setTheme(loadingThemes[state.name] ) 
+        if (_className) { setClass_name(loadingThemes[state.name][_className]) }
+    }, [_className, state.name])
     
     // console.log(name, ': ', _classname)
 
