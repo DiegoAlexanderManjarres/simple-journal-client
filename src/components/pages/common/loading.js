@@ -10,7 +10,7 @@ const LoadingPage = ({ _className, ...rest }) => {
     const [class_name, setClass_name] = useState(null)
 
     useEffect(() => {
-        setTheme(loadingThemes[name])
+        // setTheme(loadingThemes[name])
         if (_className) { setClass_name(loadingThemes[name][_className]) }
     }, [_className, name])
     
