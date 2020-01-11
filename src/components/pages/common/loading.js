@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { ThemeContext } from '../../../context/contexts'
 import loadingThemes from '../../../styles/loading/loadingTheme'
 
@@ -6,7 +6,12 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 const LoadingPage = ({ _className, ...rest }) => {
     const { name } = useContext(ThemeContext)
-    const [theme] = useState(loadingThemes[name])
+    const [theme, setTheme] = useState(loadingThemes[name])
+
+    useEffect(() => {
+        console.log('theme name:', name)
+        setTheme(loadingThemes[name])
+    }, [name])
     
     return (
         <section className={_className ? theme[_className] : null}>
