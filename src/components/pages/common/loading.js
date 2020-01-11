@@ -28,6 +28,7 @@ const LoadingPage = props => {
 export const LoadingFull = props => {
     const { name } = useContext(ThemeContext)
     const theme = loadingThemes[name]
+    console.log(name, ': -', theme)
     return (
         <div className={theme.loading_full}>
             <LoadingPage />
