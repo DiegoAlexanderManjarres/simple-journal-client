@@ -3,7 +3,7 @@
 
 
 .loading_full {
-    @extend .loading_full;
+    @extend ._loading_full;
     background-color: $darkest-gray;
 }
 

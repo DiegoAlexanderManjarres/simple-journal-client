@@ -23,6 +23,8 @@ const LoadingPage = props => {
     )
 }
 
+
+// Loading animation component that cover the full view port
 export const LoadingFull = props => {
     const { name } = useContext(ThemeContext)
     

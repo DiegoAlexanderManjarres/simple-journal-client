@@ -97,6 +97,7 @@ const LoginPage = () => {
                     name="password" 
                     type="password" 
                     placeholder="Password" 
+                    autoComplete='off'
                     onChange={onChange}/>
             </div>
             {!are_FieldsEmpty && <GoogleReCaptcha onVerify={onVerify} />}

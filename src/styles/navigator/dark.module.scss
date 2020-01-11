@@ -3,6 +3,6 @@
 
 .navigator {
     @extend ._navigator;
-    background-color: inherit;
+    background-color: $darkest-gray;
     border: 1px solid lighten($dark-gray, 2%);
 }

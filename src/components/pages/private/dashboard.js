@@ -19,6 +19,7 @@ import Loading from '../common/loading'
 const EntryCart = ({ entry }) => {    
     const _language = navigator.language
     const timeFormat = { hour: '2-digit', minute:'2-digit' }
+    const date = new Date(entry.createdAt)
     return (
         <li data_id={entry.id}>
             <Link to={`/app/viewEntry/${entry.id}`} state={entry} >
@@ -28,12 +29,8 @@ const EntryCart = ({ entry }) => {
                     display: 'flex',
                     justifyContent: 'space-between'
                 }}>
-                    <time>{new Date(entry.createdAt).toDateString()}</time>                    
-                    <time>
-                        {new Date(entry.createdAt)
-                            .toLocaleTimeString(_language, timeFormat)
-                        }
-                    </time>
+                    <time>{date.toDateString()}</time>                    
+                    <time>{date.toLocaleTimeString(_language, timeFormat)}</time>
                 </div>
             </Link>
         </li>

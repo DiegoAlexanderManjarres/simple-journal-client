@@ -4,6 +4,7 @@ import { GlobalStateContext } from '../../context/contexts'
 
 
 
+// private route component
 const PrivateRoute = ({ component: Component, ...rest }) => {
     const { isLoggedIn } = useContext(GlobalStateContext)
     console.log('location------', rest.location.pathname)

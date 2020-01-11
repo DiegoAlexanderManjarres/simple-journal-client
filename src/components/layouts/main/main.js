@@ -9,7 +9,7 @@ import GLOBAL_STATE_CONTEXT_PROVIDER, {
 } from '../../../context/contexts'
 import Navigator from '../header/Navigator'
 import Footer from '../footer'
-import Loading from '../../pages/common/loading'
+import { LoadingFull } from '../../pages/common/loading'
 import '../../../styles/global-styles.module.scss'
 import containerThemes from '../../../styles/containers/containerThemes'
 
@@ -25,42 +25,49 @@ const CheckUserStatus = ({ children }) => {
 
     // Will implement from youtube video a way to cancel the axios request
     // in useEffect
-    useEffect(() => {        
-        axiosClient(ISLOGGED_IN__QUERY)
-            .then(({ data }) => {
-                dispatch({ 
-                    type: 'TOGGLE_LOGGIN_STATUS',
-                    payload: { ...data }
-                })
+    useEffect(() => {     
+        
+        const getAuthenticationStatus = async () => {
+            let response
 
-                setLoading(false)
-            })
-            .catch(error => {
+            try {
+
+                response = await axiosClient(ISLOGGED_IN__QUERY)
+                if (!response) { throw new Error('unable to fetch data') }
+
+            } catch(error) {
+
                 setLoading(false)
                 dispatch({ 
                     type: 'TOGGLE_LOGGIN_STATUS',
                     payload: { isLoggedIn: false }
                 })
+
+            } 
+
+            dispatch({ 
+                type: 'TOGGLE_LOGGIN_STATUS',
+                payload: { ...response.data }
             })
+
+            setLoading(false)
+        }
+
+        getAuthenticationStatus()        
 
         return () => {
             axiosCancel()
         }          
     }, [dispatch]) 
 
-    return loading ? <Loading /> : <>{children}</> 
+    return loading ? <LoadingFull /> : <>{children}</> 
 }
 
 
-
+// components that houses the app navigator and footer
 const MainContent = ({ children }) => {
-    const state = useContext(ThemeContext)
-    const [theme, setTheme] = useState(containerThemes[state.name])
-
-    useEffect(() => {                      
-        setTheme(containerThemes[state.name])  
-    }, [state.name])
-
+    const { name } = useContext(ThemeContext)
+    const theme = containerThemes[name] 
     return (
         <div className={theme.app_container}>
             <Navigator />

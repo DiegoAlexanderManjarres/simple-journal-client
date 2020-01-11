@@ -14,6 +14,7 @@ import { LoadingFull } from '../../pages/common/loading'
 
 
 
+// component button that toggles theme selection
 const ThemeSelector = () => {
     const { name } = useContext(ThemeContext)
     const dispatch = useContext(ThemeDispatchContext)
@@ -54,13 +55,14 @@ const ThemeSelector = () => {
 }
 
 
-
+// navigator bar links
 const NavLinks = ({ state, onClick, location, ...rest }) => {
     const { name } = useContext(ThemeContext)
 
-    const style = ({ pathname }, pathName) => (
-        pathname === pathName ? { color: '#c64772', fontWeight: 'bolder'} : null
-    )
+    const style =  pathName => {
+        const _style = { color: '#c64772', fontWeight: 'bolder' }
+        return location.pathname === pathName ? _style : null    
+    }
 
     return (
         <nav className={navTheme[name].navigator} { ...rest }> 
@@ -69,12 +71,12 @@ const NavLinks = ({ state, onClick, location, ...rest }) => {
                     {state.isLoggedIn 
                         ?   <Link 
                                 to='/app/dashboard'
-                                style={style(location, '/app/dashboard')}
+                                style={style('/app/dashboard')}
                                 >Dashboard
                             </Link> 
                         :   <Link 
                                 to='/app/login'
-                                style={style(location, '/app/login')}
+                                style={style('/app/login')}
                                 >Login
                             </Link> 
                     }
@@ -82,7 +84,7 @@ const NavLinks = ({ state, onClick, location, ...rest }) => {
                 <div> 
                     <Link 
                         to='/app/about'
-                        style={style(location, '/app/about')}
+                        style={style('/app/about')}
                         >About
                     </Link> 
                 </div>
@@ -135,8 +137,6 @@ const Navigator = props => {
         
     )
 }
-
-
 
 
 

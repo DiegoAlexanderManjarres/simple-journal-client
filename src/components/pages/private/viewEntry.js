@@ -10,23 +10,27 @@ import EditSvg from './../../../../static/assets/icons/edit.svg'
 
 
 const ViewEntry = props => {
+    const { entryId, location: { state } } = props
+
     const timeFormat = { hour: '2-digit', minute: '2-digit' }
     const _language = navigator.language
-
-    const { entryId, location: { state } } = props
     const isState = !!state
 
     const { name } = useContext(ThemeContext)
     const [entry, setEntry] = useState(state)
     const [isEditModal, setIsEditModal] = useState(false)
-    const [theme] = useState(containerThemes[name])
-    
+    const [theme] = useState(containerThemes[name])  
+
     useEffect(() => {
+
         if (!isState) {
             axiosClient({ ...GET_MY_ENTRIES__QUERY, variables: { entryId } })
-                .then(({ data }) => {      
-                    const isDataArray = data && Array.isArray(data.entries)          
-                    setEntry( isDataArray ? data.entries[0] : null)                
+                .then(({ data }) => {   
+
+                    const isDataArray = data && Array.isArray(data.entries) 
+
+                    setEntry( isDataArray ? data.entries[0] : null) 
+
                 })
                 .catch(error => { throw new Error(error) })
 
@@ -34,6 +38,7 @@ const ViewEntry = props => {
                 axiosCancel()
             } 
         }
+
     }, [entryId, isState])
 
     const handleModalClic = () => {

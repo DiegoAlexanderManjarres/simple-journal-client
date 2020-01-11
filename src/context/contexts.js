@@ -71,15 +71,7 @@ const initialState = { isLoggedIn: false }
  * sets theme name init states to local storage if empty
  */
 const setThemeNameInitState = () => {  
-    /* let _localStorage 
-
-    if(typeof window === 'undefined') {
-        _localStorage = memoryStorage
-    } else {
-        _localStorage = window.localStorage
-    }
-     */
-     
+    
     const _localStorage = typeof window === 'undefined' 
         ? memoryStorage
         : window.localStorage

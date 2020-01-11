@@ -59,10 +59,13 @@ const EditEntry = props => {
 
         axiosClient({ ...EDIT_ENTRY_MUTATION, variables: { data, entryId: state.id }})
             .then(({ data }) => {  
-                let message = data ? 'Entry updated!' : 'Unable to update Entry' 
+
+                const message = data ? 'Entry updated!' : 'Unable to update Entry' 
+
                 if (data) {
                     dispatch({ type: 'UPDATE_ENTRY', payload: { ...data.editEntry } })
-                }    
+                } 
+
                 navigate('/app/dashboard', { state: { message } })       
             })
             .catch(error => { throw new Error(error) })   
@@ -70,17 +73,24 @@ const EditEntry = props => {
     
     return (
         <div className={theme._full_vh_modal}>
+
             <ButtonModalClose onClick={props.onClick}>X</ButtonModalClose>
+
             <div className={theme.modal_content_container}>
+
                 <h3 style={{ textAlign: 'center' }}>Edit Entry</h3>
+
                 <Form 
                     onSubmit={handleSubmit} 
                     titleInput={state.title}
                     contentInput={state.text}/>
+
                 <div className={theme._display_none_onLandscape}>    
                     <DeleteEntryButton entryId={state.id} /> 
                 </div>
-            </div>               
+
+            </div>       
+                    
         </div>
     )
 }
