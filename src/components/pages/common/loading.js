@@ -4,11 +4,11 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 
 
-const LoadingPage = props => {
+const LoadingPage = ({ _className, ...rest }) => {
     const { name } = useContext(ThemeContext)
     const theme = loadingThemes[name]
     return (
-        <section>
+        <section className={_className ? theme[_className] : null}>
             
             <header>
                 <div className={theme.circle}></div>
@@ -16,7 +16,7 @@ const LoadingPage = props => {
             </header> 
             
             <div id={theme.content}>
-                <span className={theme.expand}></span>
+                <span className={theme.expand} />
             </div>      
             
         </section>
@@ -25,16 +25,7 @@ const LoadingPage = props => {
 
 
 // Loading animation component that cover the full view port
-export const LoadingFull = props => {
-    const { name } = useContext(ThemeContext)
-    const theme = loadingThemes[name]
-    console.log(name, ': -', theme)
-    return (
-        <div className={theme.loading_full}>
-            <LoadingPage />
-        </div>
-    )
-}
+export const LoadingFull = props => <LoadingPage _className={'loading_full'}/>
 
 
 
