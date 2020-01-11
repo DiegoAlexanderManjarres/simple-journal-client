@@ -8,10 +8,20 @@ const LoadingPage = ({ _className, ...rest }) => {
     const { name } = useContext(ThemeContext)
     const theme = loadingThemes[name]
     const _classname = _className ? theme[_className] : null
-    console.log(name, ': ', _classname)
+    const style_background = { 
+        backgroundColor: name === 'DARK' ? '#383838' : 'white'
+    }
+    // console.log(name, ': ', _classname)
+
+    /* TODO
+        on production netlify for some reason the theme that shows on client side
+        is allways DEFAULT even when console log shows its DARK
+
+        to fix it I am usint style to pic the right backgorund color
+    */
 
     return (
-        <div className={_classname}>            
+        <section className={_classname} style={style_background}>            
             <header>
                 <div className={theme.circle}></div>
                 <h1 className={theme.change}>LOADING</h1>
@@ -21,7 +31,7 @@ const LoadingPage = ({ _className, ...rest }) => {
                 <span className={theme.expand} />
             </div>      
             
-        </div>
+        </section>
     )
 }
 
