@@ -9,8 +9,10 @@ const LoadingPage = ({ _className, ...rest }) => {
     const theme = loadingThemes[name]
     
     return (
-        <section className={_className ? theme[_className] : null}>
-            {console.log(name, ': ', theme[_className])}
+        <section className={() => {
+            console.log(name, ': ', theme[_className])
+            return _className ? theme[_className] : null
+            }}>            
             <header>
                 <div className={theme.circle}></div>
                 <h1 className={theme.change}>LOADING</h1>

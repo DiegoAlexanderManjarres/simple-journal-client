@@ -29,6 +29,7 @@ const ThemeSelector = () => {
                 : 'DEFAULT'
 
         dispatch({ type: 'SET_THEME_NAME', payload: { name: themeName }})
+        
         const _localStorage = typeof window === 'undefined' 
             ? memoryStorage
             : window.localStorage
