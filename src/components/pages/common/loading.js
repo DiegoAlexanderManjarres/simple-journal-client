@@ -10,7 +10,7 @@ const LoadingPage = ({ _className, ...rest }) => {
     const [class_name, setClass_name] = useState(null)
 
     useEffect(() => {
-        // setTheme(loadingThemes[name])
+        setTheme(loadingThemes[name])
         if (_className) { setClass_name(loadingThemes[name][_className]) }
     }, [_className, name])
     
@@ -30,7 +30,7 @@ const LoadingPage = ({ _className, ...rest }) => {
         <section className={class_name}>            
             <header>
                 <div className={theme.circle}></div>
-                <h1 className={theme.change}>LOADING</h1>
+                <h2 className={theme.change}>LOADING...</h2>
             </header> 
             
             <div id={theme.content}>
