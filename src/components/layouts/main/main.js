@@ -50,7 +50,7 @@ const CheckUserStatus = ({ children }) => {
                 payload: { ...response.data }
             })
 
-            setLoading(false)
+            // setLoading(false)
         }
 
         getAuthenticationStatus()        
