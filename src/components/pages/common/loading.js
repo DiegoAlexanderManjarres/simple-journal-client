@@ -11,7 +11,7 @@ const LoadingPage = ({ _className, ...rest }) => {
     console.log(name, ': ', _classname)
 
     return (
-        <section className={_classname}>            
+        <div className={_classname}>            
             <header>
                 <div className={theme.circle}></div>
                 <h1 className={theme.change}>LOADING</h1>
@@ -21,7 +21,7 @@ const LoadingPage = ({ _className, ...rest }) => {
                 <span className={theme.expand} />
             </div>      
             
-        </section>
+        </div>
     )
 }
 
