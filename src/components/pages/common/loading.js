@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { ThemeContext } from '../../../context/contexts'
 import loadingThemes from '../../../styles/loading/loadingTheme'
 
@@ -6,7 +6,8 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 const LoadingPage = ({ _className, ...rest }) => {
     const { name } = useContext(ThemeContext)
-    const theme = loadingThemes[name]
+    const [theme] = useState(loadingThemes[name])
+    
     return (
         <section className={_className ? theme[_className] : null}>
             
