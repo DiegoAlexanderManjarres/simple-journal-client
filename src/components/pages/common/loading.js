@@ -7,8 +7,9 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 const LoadingPage = ({ _className, ...rest }) => {
     const { name } = useContext(ThemeContext)
     const theme = loadingThemes[name]
-    console.log(name, ': ', theme[_className])
     const _classname = _className ? theme[_className] : null
+    console.log(name, ': ', _classname)
+
     return (
         <section className={_classname}>            
             <header>
