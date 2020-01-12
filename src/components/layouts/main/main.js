@@ -29,6 +29,7 @@ const CheckUserStatus = ({ children }) => {
         
         const getAuthenticationStatus = async () => {
             let response
+            const type = 'TOGGLE_LOGGIN_STATUS'
 
             try {
 
@@ -38,17 +39,11 @@ const CheckUserStatus = ({ children }) => {
             } catch(error) {
 
                 setLoading(false)
-                dispatch({ 
-                    type: 'TOGGLE_LOGGIN_STATUS',
-                    payload: { isLoggedIn: false }
-                })
+                dispatch({ type, payload: { isLoggedIn: false } })
 
             } 
 
-            dispatch({ 
-                type: 'TOGGLE_LOGGIN_STATUS',
-                payload: { ...response.data }
-            })
+            dispatch({ type, payload: { ...response.data } })
 
             setLoading(false)
         }
@@ -62,6 +57,7 @@ const CheckUserStatus = ({ children }) => {
 
     return loading ? <LoadingFull /> : <>{children}</> 
 }
+
 
 
 // components that houses the app navigator and footer

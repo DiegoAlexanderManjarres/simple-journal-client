@@ -41,15 +41,21 @@ const EntryCart = ({ entry }) => {
 
 const Entries = ({ entries, ...props }) => {
 
-    const state = useContext(ThemeContext)
+    const state = useContext(ThemeContext)/* 
     const [theme, setTheme] = useState(containerThemes[state.name])
     
     useEffect(() => {
         setTheme(containerThemes[state.name])
     }, [state.name])
- 
+  */
+    const theme = containerThemes[state.name]
+    
     const MyEntries = entries
         .map(entry => <EntryCart key={entry.id} entry={entry} />)
+
+    if (entries.length < 1) { 
+        return <h3 style={{ textAlign: 'center' }}>Add and entry</h3> 
+    }    
 
     return (
         <ul className={theme.entries_container}>
