@@ -10,24 +10,40 @@
     @extend ._entries_container;    
     > li {    
         background-color: lighten($darkest-gray, 1.5%);    
-        border: 1px solid lighten($dark-gray, 0.5%);   
+        border: 1px solid lighten($dark-gray, 0.5%);  
+        border-right: 0.3rem solid $nice-purple; 
         -webkit-box-shadow: 4px 4px 12px 4px darken($darkest-gray, 2%); 
         box-shadow: 4px 4px 12px 4px darken($darkest-gray, 2%);  
+        transition: box-shadow 0.5s;
         h4 {
             color: $nice-purple;
         }           
     }
     > li:hover {
-        -webkit-box-shadow: inset -1px 3px 6px 0px lighten($darkest-gray, 1.6%), 
+        -webkit-box-shadow: inset 1px 1px 10px 0px lighten($darkest-gray, 5%), 
                             2px 5px 16px 0px lighten($darkest-gray, 1.6%), 
                             5px 5px 15px 5px rgba(0,0,0,0); 
-        box-shadow: inset -1px 3px 6px 0px lighten($darkest-gray, 1.6%), 
+        box-shadow: inset 1px 1px 10px 0px lighten($darkest-gray, 5%), 
                     2px 5px 16px 0px lighten($darkest-gray, 1.6%), 
                     5px 5px 15px 5px rgba(0,0,0,0);
+        transition: box-shadow 0.5s;            
     } 
 }
 
 .modal_content_container {
     @extend ._modal_content_container;
     background-color: $dark-gray;
+}
+
+.view_entry {
+    @extend ._view_entry;
+    border: 1px dotted lighten($darkest-gray, 10%);
+    border-left: 0.4rem solid $nice-purple;
+    border-radius: 0.3rem;
+}
+
+@media screen and (min-width: 700px) {
+    .view_entry {
+        border-left: 1.5rem solid $nice-purple;
+    }
 }

@@ -6,5 +6,9 @@
     @extend ._navigator;
     background-color: white;
     border: 1px solid darken($lightest-gray, 5%);
+    > div {
+        border-right: 1px dotted darken($lightest-gray, 5%);
+        border-left: 1px dotted darken($lightest-gray, 5%);
+    }
 }
 

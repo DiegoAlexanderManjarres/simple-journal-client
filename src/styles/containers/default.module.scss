@@ -12,7 +12,7 @@
         background-color: darken($smoke-white, 0%); 
         border: 1px dashed lighten($nice-magenta, 25%);
         box-shadow: 3px 3px 7px 3px $lightest-gray; 
-        transition: box-shadow 3s, color 3s;
+        transition: box-shadow 0.5s;
         &:hover {
             -webkit-box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 2%), 
                                 2px 5px 16px 0px $lightest-gray, 
@@ -20,7 +20,7 @@
             box-shadow: inset -1px 3px 8px 5px lighten($lightest-gray, 2%), 
                         2px 5px 16px 0px $lightest-gray, 
                         5px 5px 15px 5px rgba(0,0,0,0);
-            // transition: box-shadow 3s, color 3s;
+            transition: box-shadow 0.5s;
         } 
         h4 {
             color: $nice-magenta;
@@ -38,6 +38,11 @@
             border: none;
             border-bottom: 1.4px dotted lighten($nice-magenta, 25%);
             box-shadow: none;
+            &:hover {
+                border-radius: 0.4rem;
+                box-shadow: inset 1px 1px 15px 10px white;
+                background-color: lighten($smoke-white, 1%);
+            }
         }
     }
 }
@@ -45,4 +50,17 @@
 .modal_content_container {
     @extend ._modal_content_container;
     background-color: white;
+}
+
+.view_entry {
+    @extend ._view_entry;
+    border: 0.5px dotted $nice-magenta;
+    border-left: 0.4rem solid $nice-magenta;
+    border-radius: 0.4rem;
+}
+
+@media screen and (min-width: 700px) {
+    .view_entry {
+        border-left: 1.5rem solid $nice-magenta;
+    }
 }

@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer>
+        <footer style={{ backgroundColor: 'inherit' }}>
             <div style={{ fontSize: '0.8rem', textAlign: 'center' }}>
                 {'Icons made by '} 
                 <a href="https://www.flaticon.com/authors/iconixar" title="iconixar">

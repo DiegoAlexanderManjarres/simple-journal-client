@@ -65,13 +65,25 @@
             color: inherit;
             time {
                 font-size: 0.8rem;
+                margin: 0.5rem 0rem 0.5rem;
             }
             > p {
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
                 overflow: hidden;
+                margin: 0.5rem 0rem 0.5rem;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    ._entries_container {
+        margin-top: 3rem;
+        > li {
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
     }
 }
@@ -120,8 +132,8 @@
 }
 
 
-.view_entry {
-    height: calc(100vh - 5.3rem);
+._view_entry {
+    height: calc(95vh - 5.3rem);
     > h1 {
         margin: 3.5rem 0rem 3rem 0rem;
     }       
@@ -129,4 +141,8 @@
 }
 
 
-
+@media screen and (min-width: 700px) {
+    ._view_entry {
+        padding: 1.5rem;
+    }
+}

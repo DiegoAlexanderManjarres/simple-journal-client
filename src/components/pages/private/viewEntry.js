@@ -19,7 +19,7 @@ const ViewEntry = props => {
     const { name } = useContext(ThemeContext)
     const [entry, setEntry] = useState(state)
     const [isEditModal, setIsEditModal] = useState(false)
-    const [theme] = useState(containerThemes[name])  
+    const theme = containerThemes[name]
 
     useEffect(() => {
 
