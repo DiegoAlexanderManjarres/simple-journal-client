@@ -45,43 +45,40 @@ const ViewEntry = props => {
         setIsEditModal(!isEditModal)
     }
 
-    if (!entry) { return <h5>Could not fetch entry</h5> }    
+    if (!entry) { return <h5>Could not fetch entry</h5> } 
+    const date = new Date(entry.createdAt)   
 
     return (
         <div className={theme.page_container}>
 
-            <div 
-                style={{ 
-                    display: 'flex', 
-                    padding: '0.5rem 0.5rem 0rem', 
-                    justifyContent: 'center' 
-                }}>
-                <Button onClick={handleModalClic} >
-                    <EditSvg fill='#fff' width='25' height='25' />
-                </Button>
-            </div>
+            
             
             {isEditModal && (
                 <EditEntry onClick={handleModalClic} state={entry} theme={theme}/>
             )}
 
             <div className={theme.view_entry}>
-                
+                <div 
+                    style={{ 
+                        display: 'flex', 
+                        padding: '0.5rem 0.5rem 0rem', 
+                        justifyContent: 'end' 
+                    }}>
+                    <Button onClick={handleModalClic} >
+                        <EditSvg fill='#fff' width='25' height='25' />
+                    </Button>
+                </div>
                 <div className={theme.space_between__container}>
                     <p>
-                        <time>{new Date(entry.createdAt).toDateString()}</time>
+                        <time>{date.toDateString()}</time>
                     </p>
                     <p>    
-                        <time>
-                            {new Date(entry.createdAt)
-                                .toLocaleTimeString(_language, timeFormat)
-                            }
-                        </time>
+                        <time>{date.toLocaleTimeString(_language, timeFormat)}</time>
                     </p>
                 </div>
                 
                 <h1 style={{ textAlign: 'center' }}>{entry.title}</h1>
-                <p>{entry.text}</p>
+                <p style={{ marginBottom: '3rem'}}>{entry.text}</p>
             </div>
 
         </div>
