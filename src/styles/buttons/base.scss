@@ -15,7 +15,11 @@
     outline: none;
     border: none;
     border-radius: 0.2rem;
-    cursor: pointer;
+    cursor: pointer;   
+    &::-moz-focus-inner, :focus, ::-moz-focus-outer {
+        outline: none;
+        border: none;
+    } 
 }
 
 ._button_extend  {

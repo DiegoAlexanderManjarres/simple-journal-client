@@ -4,7 +4,7 @@ import loadingThemes from '../../../styles/loading/loadingTheme'
 
 
 
-const LoadingPage = ({ _className, ...rest }) => {
+const LoadingPage = ({ _className, expandStyle, ...rest }) => {
     const { name } = useContext(ThemeContext)
     const theme = loadingThemes[name]
     const [class_name, setClass_name] = useState(null)
@@ -33,7 +33,10 @@ const LoadingPage = ({ _className, ...rest }) => {
             </header> 
             
             <div id={(theme || loadingThemes[name]).content}>
-                <span className={(theme || loadingThemes[name]).expand} />
+                <span 
+                    className={(theme || loadingThemes[name]).expand} 
+                    style={expandStyle}
+                    />
             </div>      
             
         </section>

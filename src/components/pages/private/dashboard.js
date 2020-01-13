@@ -147,8 +147,13 @@ const Dashboard = props => {
                     dispatchEntries={dispatchEntries}
                     theme={theme} />
             )}
+
             <hr className={theme.hr_display}/>
-            {loading ? <Loading /> : <Entries entries={entries} /> }      
+            
+            {loading 
+                ? <Loading expandStyle={{ maxWidth: '50rem' }}/> 
+                : <Entries entries={entries} /> 
+            }      
 
         </div>
     )

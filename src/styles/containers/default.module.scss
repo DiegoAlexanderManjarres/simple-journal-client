@@ -65,7 +65,7 @@
 
 .view_entry {
     @extend ._view_entry;
-    border: 0.5px dotted $nice-magenta;
+    border-right: 0.5px dotted $nice-magenta;
     border-left: 0.4rem solid $nice-magenta;
     border-radius: 0.4rem;
 }
