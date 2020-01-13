@@ -30,6 +30,11 @@
     } 
 }
 
+.hr_display {
+    @extend ._hr_display_none;
+}
+
+
 .modal_content_container {
     @extend ._modal_content_container;
     background-color: $dark-gray;

@@ -29,10 +29,9 @@
 }
 
 @media screen and (min-width: 640px) {    
-    .entries_container {
-        > li:first-child {
-            border-top: 1.4px dotted lighten($nice-magenta, 25%);
-        }
+    .entries_container {     
+        padding-top: 0rem;   
+        margin-top: 0rem;
         > li {
             border-radius: unset;
             border: none;
@@ -44,6 +43,18 @@
                 background-color: lighten($smoke-white, 1%);
             }
         }
+    }
+}
+
+.hr_display {
+    @extend ._hr_display_none;
+}
+
+@media screen and (min-width: 640px) {
+    .hr_display {
+        display: block;
+        border: none;
+        border-bottom: 1.4px dotted lighten($nice-magenta, 25%);
     }
 }
 

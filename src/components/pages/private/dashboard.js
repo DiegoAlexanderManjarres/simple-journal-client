@@ -68,15 +68,16 @@ const Entries = ({ entries, ...props }) => {
 
 const Dashboard = props => {
     const { state } = props.location
-    const message = (state && state.message) ? state.message : null
 
     const entries = useContext(GlobalEntriesContext)
     const dispatchEntries = useContext(GlobalEntriesDispatch)
     const { name } = useContext(ThemeContext)
 
-    const [theme] = useState(containerThemes[name])
     const [isAddEntryModal, setIsAddEntryModal] = useState(false)
     const [loading, setLoading] = useState(false)
+
+    const theme = containerThemes[name]
+    const message = (state && state.message) ? state.message : null
     
     /* 
         TODO
@@ -146,7 +147,7 @@ const Dashboard = props => {
                     dispatchEntries={dispatchEntries}
                     theme={theme} />
             )}
-
+            <hr className={theme.hr_display}/>
             {loading ? <Loading /> : <Entries entries={entries} /> }      
 
         </div>
