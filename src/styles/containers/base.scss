@@ -10,7 +10,8 @@
     > footer {           
         width: 100%;      
         position: relative;
-        bottom: 0rem;
+        bottom: 0;
+        clear: both;
         height: 10rem;
         min-height: 10rem;
         // border: 1px solid red;
@@ -21,7 +22,7 @@
 @media screen and (max-height: 500px) {
     ._app_container {
         > footer {
-            bottom: -5rem;
+            bottom: -7rem;
         }
     }
 }
@@ -145,6 +146,12 @@
 @media screen and (min-width: 700px) {
     ._view_entry {
         padding: 1.5rem;
+    }
+}
+
+@media screen and (min-height: 900px) {
+    ._view_entry {
+        min-height: 900px;
     }
 }
 

@@ -78,45 +78,56 @@ const RegisterPage = () => {
 
     const titleHeader = 'Register'
     return (
-        <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
-            <div>
-                <input 
-                    name="name" 
-                    type="text" 
-                    placeholder="name" 
-                    onChange={onChange}/>
-            </div>
-            <div>
-                <input 
-                    name="email" 
-                    type="email" 
-                    placeholder="E-mail" 
-                    onChange={onChange}/>
-            </div>
-            <div>
-                <input 
-                    name="password" 
-                    type="password" 
-                    placeholder="Password" 
-                    onChange={onChange}/>
-            </div>
-            <div>
-                <input 
-                    name="repeat_password" 
-                    type="password" 
-                    placeholder="Confirm Password" 
-                    onChange={onChange}/>
-            </div>
-            <div>                    
-                {!are_FieldsEmpty && <GoogleReCaptcha onVerify={onVerify} />}
-            </div>
-            <div>
-                {console.log('button disabled?',!(!!recaptcha && !are_FieldsEmpty))}
-                <Button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
-                    Register
-                </Button>
-            </div>  
-        </Form>
+        <div style={{
+            maxWidth: '50rem',
+            minHeight: '380px',
+            height: '100vh',
+            // border: '1px solid green',
+            margin: '0 auto'
+        }}>
+            <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
+                <div>
+                    <input 
+                        name="name" 
+                        type="text" 
+                        placeholder="name" 
+                        onChange={onChange}/>
+                </div>
+                <div>
+                    <input 
+                        name="email" 
+                        type="email" 
+                        placeholder="E-mail" 
+                        onChange={onChange}/>
+                </div>
+                <div>
+                    <input 
+                        name="password" 
+                        type="password" 
+                        placeholder="Password" 
+                        onChange={onChange}/>
+                </div>
+                <div>
+                    <input 
+                        name="repeat_password" 
+                        type="password" 
+                        placeholder="Confirm Password" 
+                        onChange={onChange}/>
+                </div>
+                <div>                    
+                    {!are_FieldsEmpty && <GoogleReCaptcha onVerify={onVerify} />}
+                </div>
+                <div>
+                    {console.log('button disabled?',!(!!recaptcha && !are_FieldsEmpty))}
+                    <Button 
+                        type='submit' 
+                        disabled={!(!!recaptcha && !are_FieldsEmpty)}
+                        >Register
+                    </Button>
+                </div>  
+            </Form>
+        </div>
+        
 )}
 
 

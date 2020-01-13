@@ -41,27 +41,17 @@ const EntryCart = ({ entry }) => {
 
 const Entries = ({ entries, ...props }) => {
 
-    const state = useContext(ThemeContext)/* 
-    const [theme, setTheme] = useState(containerThemes[state.name])
+    const state = useContext(ThemeContext)
     
-    useEffect(() => {
-        setTheme(containerThemes[state.name])
-    }, [state.name])
-  */
     const theme = containerThemes[state.name]
     
     const MyEntries = entries
         .map(entry => <EntryCart key={entry.id} entry={entry} />)
 
-    if (entries.length < 1) { 
-        return <h3 style={{ textAlign: 'center' }}>Add and entry</h3> 
-    }    
-
-    return (
-        <ul className={theme.entries_container}>
-            {MyEntries}
-        </ul>
-    )
+    // check if entries array is empty    
+    return entries.length < 1 
+        ? <h3 style={{ textAlign: 'center' }}>Add and entry</h3> 
+        : <ul className={theme.entries_container}>{MyEntries}</ul>    
 }
 
 
@@ -149,7 +139,7 @@ const Dashboard = props => {
             )}
 
             <hr className={theme.hr_display}/>
-            
+
             {loading 
                 ? <Loading expandStyle={{ maxWidth: '50rem' }}/> 
                 : <Entries entries={entries} /> 

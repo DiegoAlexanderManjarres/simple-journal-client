@@ -84,30 +84,40 @@ const LoginPage = () => {
     if (loading) { return <Loading /> }
 
     return (
-        <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
-            <div>
-                <input 
-                    name="email" 
-                    type="email" 
-                    placeholder="E-mail" 
-                    onChange={onChange}/>
-            </div>
-            <div>
-                <input 
-                    name="password" 
-                    type="password" 
-                    placeholder="Password" 
-                    autoComplete='off'
-                    onChange={onChange}/>
-            </div>
-            {!are_FieldsEmpty && <GoogleReCaptcha onVerify={onVerify} />}
-            <div className={style.DEFAULT.space_between__container}>
-                <Button type='submit' disabled={!(!!recaptcha && !are_FieldsEmpty)}>
-                    Login
-                </Button>
-                <Link to='/app/register'>Register</Link>  
-            </div>    
-        </Form>
+        <div style={{
+            maxWidth: '50rem',
+            minHeight: '100vh',
+            // border: '1px solid green',
+            margin: '0 auto'
+        }}>
+            <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
+                <div>
+                    <input 
+                        name="email" 
+                        type="email" 
+                        placeholder="E-mail" 
+                        onChange={onChange}/>
+                </div>
+                <div>
+                    <input 
+                        name="password" 
+                        type="password" 
+                        placeholder="Password" 
+                        autoComplete='off'
+                        onChange={onChange}/>
+                </div>
+                {!are_FieldsEmpty && <GoogleReCaptcha onVerify={onVerify} />}
+                <div className={style.DEFAULT.space_between__container}>
+                    <Button 
+                        type='submit' 
+                        disabled={!(!!recaptcha && !are_FieldsEmpty)}
+                        >Login
+                    </Button>
+                    <Link to='/app/register'>Register</Link>  
+                </div>    
+            </Form>
+        </div>
+        
     )
 }
 
