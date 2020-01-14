@@ -79,6 +79,7 @@ const LoginPage = () => {
                 throw new Error(error) 
             })                
     }
+    
     const titleHeader = 'Welcome to Simple Journal'
 
     if (loading) { return <Loading /> }

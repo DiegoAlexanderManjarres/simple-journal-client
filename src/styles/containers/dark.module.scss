@@ -4,6 +4,13 @@
     @extend ._app_container;
     background-color: $darkest-gray;    
     color: $lightest-gray;
+    > footer {
+        border-top: 1px dashed $dark-gray;
+        > div:first-child {
+            border-left: 1px dashed $dark-gray;
+            border-right: 1px dashed $dark-gray;
+        }
+    }
 }
 
 .entries_container {
