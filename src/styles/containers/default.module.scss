@@ -5,11 +5,14 @@
     background-color: #f9f9f9;
     color: lighten($dark-gray, 10%);
     > footer {
-        border-top: 1px dotted $nice-magenta;
-        background-color: inherit;
+        background-color: darken($nice-magenta, 15%);
+        color: white;
+        a {
+            color: lighten(#c647b1, 20%);
+        }
         > div:first-child {
-            border-left: 1px dashed $nice-magenta;
-            border-right: 1px dashed $nice-magenta;
+            border-left: 2px dotted lighten($nice-magenta, 0%);
+            border-right: 2px dotted lighten($nice-magenta, 0%);
         }
     }
 }
@@ -43,13 +46,16 @@
         > li {
             border-radius: unset;
             border: none;
-            border-bottom: 1.4px dotted lighten($nice-magenta, 25%);
+            border-bottom: 1.4px dotted darken($lightest-gray, 10%);
             box-shadow: none;
             &:hover {
                 border-radius: 0.4rem;
                 box-shadow: inset 1px 1px 15px 10px white;
                 background-color: lighten($smoke-white, 1%);
-            }
+            }            
+        }
+        > li:last-child {
+            margin-bottom: 9rem;
         }
     }
 }
@@ -62,7 +68,7 @@
     .hr_display {
         display: block;
         border: none;
-        border-bottom: 1.4px dotted lighten($nice-magenta, 25%);
+        border-bottom: 1.4px dotted darken($lightest-gray, 10%);
     }
 }
 
@@ -73,13 +79,14 @@
 
 .view_entry {
     @extend ._view_entry;
-    border-right: 0.5px dotted $nice-magenta;
-    border-left: 0.4rem solid $nice-magenta;
+    border-right: 0.3rem dotted darken($lightest-gray, 5%);
+    border-left: 0.3rem dotted darken($lightest-gray, 5%);
     border-radius: 0.4rem;
 }
 
 @media screen and (min-width: 700px) {
     .view_entry {
-        border-left: 1.5rem solid $nice-magenta;
+        border-left: 0.6rem dotted darken($lightest-gray, 5%);
+        border-right: 0.6rem dotted darken($lightest-gray, 5%);
     }
 }

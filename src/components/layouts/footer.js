@@ -21,7 +21,7 @@ const IconsCreditLinks = () => (
         <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">
             Kiranshastry
         </a>   
-        {', '}                
+        {', and '}                
         <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">
             DinosoftLabs
         </a> 
@@ -44,6 +44,7 @@ const Footer = () => {
                 margin: '0 auto', 
                 height: '100%'                               
             }}>
+                <p style={{ textAlign: 'center' }}>Coded by Diego Manjarres</p>
                 <IconsCreditLinks />
             </div>           
         </footer>
