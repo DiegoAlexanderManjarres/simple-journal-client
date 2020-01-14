@@ -5,11 +5,11 @@
     background-color: #f9f9f9;
     color: lighten($dark-gray, 10%);
     > footer {
-        border-top: 1px dotted darken($lightest-gray, 30%);
+        border-top: 1px dotted $nice-magenta;
         background-color: inherit;
         > div:first-child {
-            border-left: 1px dashed darken($lightest-gray, 30%);
-            border-right: 1px dashed darken($lightest-gray, 30%);
+            border-left: 1px dashed $nice-magenta;
+            border-right: 1px dashed $nice-magenta;
         }
     }
 }
