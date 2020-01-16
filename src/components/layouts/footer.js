@@ -7,6 +7,7 @@ const IconsCreditLinks = () => (
         style={{ 
             fontSize: '0.8rem', 
             textAlign: 'center', 
+            height: 'auto'
             // margin: '1rem 0rem 0.5rem',
             }}
         >{'Icons made by '} 
@@ -44,7 +45,7 @@ const Footer = () => {
                 margin: '0 auto', 
                 height: '100%'                               
             }}>
-                <p style={{ textAlign: 'center' }}>Coded by Diego Manjarres</p>
+                <p style={{ textAlign: 'center' }}>&copy; Diego Manjarres</p>
                 <IconsCreditLinks />
             </div>           
         </footer>
