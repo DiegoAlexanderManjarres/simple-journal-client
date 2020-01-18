@@ -15,7 +15,7 @@
     > form {
         box-shadow: 1px 1px 2px 1px lightgray;
         background-color: $smoke-white;
-        > div[class="input_container"] {
+        > div[class="input_container"] {            
             &:after {  
                 background: $bg-magenta-purple-gradient;
                 content: ' ';
@@ -27,12 +27,40 @@
             }     
             > input {
                 position: relative;
-                z-index: 1;
+                z-index: 10;
                 background-color: darken($smoke-white, 0%); 
                 // border-bottom: 1px solid gray; 
             }
             
         }         
+    }
+}
+
+@media screen and (max-height: $landscape) and (orientation: landscape) {
+    .viewportCenteredForm {
+        div[class="input_container"]:focus-within {
+            position: fixed;
+            top: calc(0rem - 3.3rem);
+            background-color: $smoke-white;
+            left: 0;
+            right: 0;
+            min-height: 100vh;
+            z-index: 600;
+            border: 1px solid $lightest-gray;
+            > input {
+                position: static;
+            }
+        }
+        // input:focus {
+        //     position: fixed;
+        //     top: calc(0rem - 3.3rem);
+        //     left: 0;
+        //     right: 0;
+        //     min-height: 100vh;
+        //     min-width: 100vw;
+        //     z-index: 600;
+        //     border: 1px solid $lightest-gray;
+        // }
     }
 }
 
