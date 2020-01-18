@@ -92,14 +92,14 @@ const LoginPage = () => {
             margin: '0 auto'
         }}>
             <Form onSubmit={handleSubmit} header={titleHeader} anError={error}>
-                <div>
+                <div className={'input_container'}>
                     <input 
                         name="email" 
                         type="email" 
                         placeholder="E-mail" 
                         onChange={onChange}/>
                 </div>
-                <div>
+                <div className={'input_container'}>
                     <input 
                         name="password" 
                         type="password" 

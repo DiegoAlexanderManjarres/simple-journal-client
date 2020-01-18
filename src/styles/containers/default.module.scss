@@ -8,7 +8,8 @@
         background-color: darken($nice-magenta, 10%);
         color: $smoke-white;
         a {
-            color: lighten($complementary-magenta-1, 20%);
+            color: lighten($complementary-magenta-1, 0%);
+            text-shadow: 1px 1px 1px rgba(0,0,0, 0.5);
         }
         > div:first-child {
             border-left: 2px dotted lighten($nice-magenta, 0%);
